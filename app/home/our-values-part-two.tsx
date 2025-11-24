@@ -124,10 +124,10 @@ export default function OurValuesPartTwo() {
                   </div>
                   <span className="text-gray-400 text-sm">/{value.id}</span>
                 </div>
-                <h4 className="text-skyBlue custom-text-28   mb-3">
+                <h4 className="text-skyBlue custom-text-28 mb-3">
                   {value.title}
                 </h4>
-                <p className="text-lightGray custom-text-16 font-normal">
+                <p className="text-lightGray custom-text-16 font-normal pr-10">
                   {value.description}
                 </p>
               </div>
