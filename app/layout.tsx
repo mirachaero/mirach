@@ -24,13 +24,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mirach.vercel.app/",
+    url: "https://mirach-dev.vercel.app/",
     siteName: "Mirach",
     title: "Mirach",
     description: "Airborne innovation with precision",
     images: [
       {
-        url: "https://mirach.vercel.app/mirach-aerospace.webp",
+        url: "https://mirach-dev.vercel.app/mirach-aerospace.webp",
         width: 1200,
         height: 630,
         alt: "Mirach",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mirach",
     description: "Airborne innovation with precision",
-    images: ["https://mirach.vercel.app/mirach-aerospace.webp"],
+    images: ["https://mirach-dev.vercel.app/mirach-aerospace.webp"],
   },
 };
 
