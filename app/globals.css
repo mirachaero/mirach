@@ -1,26 +1,351 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Core Colors */
+  --color-blue: #2a2b7d;
+  --color-skyBlue: #6da7ff;
+  --color-white: #ffffff;
+  --color-black: #0a0a0a;
+  --color-lightBlack: #151515;
+
+  /* Secondary / Brand Colors */
+  --color-darkGray: #656565;
+  --color-lightGray: #d0d0d1;
+
+  /* Gradient Colors */
+
+  --font-neue-montreal: Neue Montreal;
+
+  --breakpoint-3xl: 1921px;
+  --breakpoint-2xlg: 1728px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-xlg: 1440px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-md: 768px;
+  --breakpoint-sm: 640px;
+
+  --header-height: 5.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .d {
+    @apply border-1 border-[#ff0000] border-solid;
+  }
+
+  .blade-top-padding {
+    @apply pt-8 md:pt-10 lg:pt-14 xl:pt-16 2xl:pt-20;
+    /* needs to be changed*/
+  }
+
+  .blade-top-padding-sm {
+    @apply pt-5 md:pt-6 lg:pt-8 xl:pt-10 2xl:pt-14;
+  }
+
+  .blade-top-padding-lg {
+    @apply pt-10 md:pt-12 lg:pt-20 xl:pt-24 2xl:pt-28;
+  }
+
+  .blade-top-padding-xl {
+    @apply pt-16 md:pt-10 lg:pt-20 xl:pt-28 2xl:pt-36;
+  }
+
+  .blade-bottom-padding {
+    @apply pb-8 md:pb-10 lg:pb-14 xl:pb-16 2xl:pb-20;
+    /* needs to be changed*/
+  }
+
+  .blade-bottom-padding-sm {
+    @apply pb-5 md:pb-6 lg:pb-8 xl:pb-10 2xl:pb-14;
+    /* needs to be changed*/
+  }
+
+  .blade-bottom-padding-lg {
+    @apply pb-10 md:pb-12 lg:pb-20 xl:pb-24 2xl:pb-28;
+    /* needs to be changed*/
+  }
+
+  .blade-bottom-padding-xl {
+    @apply pb-16 md:pb-10 lg:pb-20 xl:pb-28 2xl:pb-36;
+    /* needs to be changed*/
+  }
+
+  .blade-top-margin {
+    @apply mt-8 md:mt-10 lg:mt-12 xl:mt-16 2xl:mt-20;
+  }
+
+  .blade-top-margin-sm {
+    @apply mt-5 md:mt-6 lg:mt-8 xl:mt-10 2xl:mt-14;
+  }
+
+  .blade-top-margin-lg {
+    @apply mt-10 md:mt-12 lg:mt-20 xl:mt-24 2xl:mt-28;
+  }
+
+  .blade-bottom-margin {
+    @apply mb-8 md:mb-10 lg:mb-12 xl:mb-16 2xl:mb-20;
+  }
+
+  .blade-bottom-margin-sm {
+    @apply mb-5 md:mb-6 lg:mb-8 xl:mb-10 2xl:mb-14;
+  }
+
+  .blade-bottom-margin-lg {
+    @apply mb-10 md:mb-12 lg:mb-20 xl:mb-24 2xl:mb-28;
+  }
+
+  .w-container {
+    @apply mx-auto max-w-screen-2xl px-4 lg:w-11/12;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  .custom-text-64 {
+    @apply text-[32px]  leading-[1.1em] 
+    lg:text-[48px] 
+    xlg:text-[52px]
+    2xl:text-[64px];
+  }
+
+  .custom-text-48 {
+    @apply text-[28px] leading-[1.4em]
+    lg:text-[36px] 
+    xlg:text-[42px]  lg:leading-normal
+    2xl:text-[48px];
+  }
+
+  .custom-text-36 {
+    @apply text-[24px]  leading-[1.4em] 
+    lg:text-[28px]     lg:leading-normal
+    2xl:text-[36px];
+  }
+
+  .custom-text-28 {
+    @apply text-[20px] tracking-wide
+    lg:text-[22px]     
+    2xl:text-[28px];
+  }
+
+  .custom-text-24 {
+    @apply text-[18px] tracking-wide leading-[1.5em]
+    lg:text-[20px]     lg:tracking-[0.01em] lg:leading-[1.4em]
+    2xl:text-[24px];
+  }
+
+  .custom-text-20 {
+    @apply text-[16px] tracking-wide
+    lg:text-[18px]     
+    2xl:text-[20px]    leading-[1.25em];
+  }
+
+  .custom-text-16 {
+    @apply text-[14px] tracking-wider
+    lg:text-[15px]     
+    2xl:text-[16px];
+  }
+  /* p */
+
+  b {
+    font-weight: 500;
+  }
+  strong {
+    font-weight: 500;
+  }
+  br {
+    @apply hidden sm:block;
+  }
+}
+
+@layer utilities {
+  /* Add a focus variant manually */
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-in-out forwards;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.5s ease-in-out forwards;
+  }
+
+  .animate-fade-up-slow {
+    animation: fade-up 0.8s ease-in-out forwards;
+  }
+
+  .animate-fade-up-slower {
+    animation: fade-up 1.1s ease-in-out forwards;
+  }
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+
+  src: local("Neue Montreal Medium"), local("NeueMontreal-Medium"),
+    url("/fonts/NeueMontreal-Medium.woff2") format("woff2"),
+    url("/fonts/NeueMontreal-Medium.woff") format("woff"),
+    url("/fonts/NeueMontreal-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: local("Neue Montreal Light Italic"), local("NeueMontreal-LightItalic"),
+    url("/fonts/NeueMontreal-LightItalic.woff2") format("woff2"),
+    url("/fonts/NeueMontreal-LightItalic.woff") format("woff"),
+    url("/fonts/NeueMontreal-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: local("Neue Montreal Medium Italic"), local("NeueMontreal-MediumItalic"),
+    url("/fonts/NeueMontreal-MediumItalic.woff2") format("woff2"),
+    url("/fonts/NeueMontreal-MediumItalic.woff") format("woff"),
+    url("/fonts/NeueMontreal-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: local("Neue Montreal Bold"), local("NeueMontreal-Bold"),
+    url("/fonts/NeueMontreal-Bold.woff2") format("woff2"),
+    url("/fonts/NeueMontreal-Bold.woff") format("woff"),
+    url("/fonts/NeueMontreal-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: local("Neue Montreal Bold Italic"), local("NeueMontreal-BoldItalic"),
+    url("/fonts/NeueMontreal-BoldItalic.woff2") format("woff2"),
+    url("/fonts/NeueMontreal-BoldItalic.woff") format("woff"),
+    url("/fonts/NeueMontreal-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: local("Neue Montreal Italic"), local("NeueMontreal-Italic"),
+    url("/fonts/NeueMontreal-Italic.woff2") format("woff2"),
+    url("/fonts/NeueMontreal-Italic.woff") format("woff"),
+    url("/fonts/NeueMontreal-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: local("Neue Montreal Light"), local("NeueMontreal-Light"),
+    url("/fonts/NeueMontreal-Light.woff2") format("woff2"),
+    url("/fonts/NeueMontreal-Light.woff") format("woff"),
+    url("/fonts/NeueMontreal-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: local("Neue Montreal Regular"), local("NeueMontreal-Regular"),
+    url("/fonts/NeueMontreal-Regular.woff2") format("woff2"),
+    url("/fonts/NeueMontreal-Regular.woff") format("woff"),
+    url("/fonts/NeueMontreal-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1 !important;
+    transform: translateY(0px);
+  }
+}
+
+::selection {
+  background-color: var(
+    --color-blue
+  ); /* Sets the background color of selected text to yellow */
+  color: var(--color-white); /* Sets the text color of selected text to black */
+}
+
+/* For Firefox compatibility, use ::-moz-selection */
+::-moz-selection {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #696969e0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #696969;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #67676765;
+  opacity: 0;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.spin {
+  animation: spin_360 10s linear infinite;
+}
+
+@keyframes spin_360 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.swiper-pagination-bullet {
+  background-color: #ca3604 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ca3604ae !important;
+}
+
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
