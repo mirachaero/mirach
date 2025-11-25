@@ -11,7 +11,7 @@ export default function HomePage() {
     <>
       <Banner />
       <OurValues />
-      <Domains />
+      {/* <Domains /> */}
       <Products />
 
       <WhyChooseMirach />
