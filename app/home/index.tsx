@@ -12,14 +12,14 @@ export default function HomePage() {
     <>
       <Banner />
       <OurValues />
-      <OurValuesPartTwo />
     
         {/* <VtolLogistics /> */}
-        <WhyChooseMirach />
-        <CreateChange/>
+       
 
       <Domains />
       <Products />
+       <WhyChooseMirach />
+        <CreateChange/>
     </>
   );
 }

@@ -82,8 +82,8 @@ const Card = ({ data }: { data: profileProps }) => {
             </div>
             <div className="flex justify-between items-center mt-2  lg:mt-4  mx-2">
                 <div>
-                    <h6 className="custom-text-20 font-medium text-darkGray">{data.name}</h6>
-                    <p className="text-darkGray/90 text-lg">{data.designation}</p>
+                    <h6 className="custom-text-20 font-medium text-[#3A3A3A]">{data.name}</h6>
+                    <p className="text-[#484848CC]/80 text-lg">{data.designation}</p>
                 </div>
                 <div className="border border-blue rounded-sm ">
                     <svg className="m-2" xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
