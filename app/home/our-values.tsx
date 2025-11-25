@@ -1,10 +1,11 @@
 import { Button } from "@/src/components/atoms/button";
 import Image from "next/image";
 import Link from "next/link";
+import OurValuesPartTwo from "./our-values-part-two";
 
 export default function OurValues() {
   return (
-    <section className=" ">
+    <section className="relative overflow-hidden">
       <div className="w-container blade-top-padding-lg">
         <div className="">
           <h2 className="custom-text-48 text-white   font-medium">
@@ -80,6 +81,11 @@ export default function OurValues() {
           </div>
         </div>
       </div>
+      <OurValuesPartTwo />
+
+      <div className="absolute inset-0 backdrop-blur-[100px] bg-black/5 -z-1"></div>
+      <div className="absolute bottom-[30%] left-[85%] bg-radial from-30% to-90% from-[#3382FB]/60 to-[#3382FB]/10 rounded-full w-[30rem] h-[20rem] -z-2 scale-y-[4] scale-x-[2]"></div>
+      <div className="absolute bottom-[1%] right-[85%] bg-radial from-30% to-90% from-[#3382FB]/60 to-[#3382FB]/10 rounded-full w-[30rem] h-[20rem] -z-2 scale-y-[3] scale-x-[2]"></div>
     </section>
   );
 }

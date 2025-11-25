@@ -108,9 +108,9 @@
   }
 
   .custom-text-48 {
-    @apply text-[28px] leading-[1.4em]
+    @apply text-[28px] leading-[1.1em]
     lg:text-[36px] 
-    xlg:text-[42px]  lg:leading-normal
+    xlg:text-[42px]   
     2xl:text-[48px];
   }
 
