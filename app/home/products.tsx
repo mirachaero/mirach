@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
+import { CloudCog } from "lucide-react";
 
 type ProductsData = {
   status: "available" | "coming soon";
@@ -127,20 +128,34 @@ const productsData: ProductsData[] = [
 ];
 
 export default function Products() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const tabRef = useRef<HTMLButtonElement[]>([]);
   const [activeProduct, setActiveProduct] = useState<number>(0);
   const [activeProductData, setActiveProductData] = useState<ProductsData>(
     productsData[activeProduct]
   );
 
+  const handleScroll = (idx: number) => {
+    const container = containerRef.current;
+    const tab = tabRef.current[idx];
+
+    if (container && tab) {
+      const offset =
+        tab.offsetLeft - container.offsetWidth / 2 + tab.offsetWidth / 2;
+      container.scrollTo({ left: offset, behavior: "smooth" });
+      console.log(offset);
+    }
+  };
   const handleProductChange = (idx: number) => {
     setActiveProduct(idx);
     setActiveProductData(productsData[idx]);
+    handleScroll(idx);
   };
 
   return (
     <section className="bg-[url(/assets/home/products/background.jpg)] bg-cover bg-center bg-no-repeat ">
-      <div className="w-container  relative blade-top-padding blade-bottom-padding">
-        <div className="">
+      <div className=" relative blade-top-padding blade-bottom-padding">
+        <div className="w-container ">
           <h2 className="custom-text-48 font-medium text-white text-center">
             Products
           </h2>
@@ -148,30 +163,39 @@ export default function Products() {
             Engineered for performance and reliability
           </p>
         </div>
-        <div className="flex flex-wrap xl:justify-center gap-x-4 gap-y-6 xlg:gap-x-6 mt-8 lg:mt-12 ">
-          {productsData.map((product, idx) => (
-            <button
-              onClick={() => handleProductChange(idx)}
-              key={idx}
-              className={cn(
-                "relative border-white/50 border-[1px] custom-text-18  text-white/50 hover:bg-skyBlue/30 py-3 xlg:py-4 2xl:py-6 px-3 2xl:px-9 cursor-pointer transition-all  duration-300",
-                {
-                  "border-white": activeProduct === idx,
-                  "text-white ": activeProduct === idx,
-                }
-              )}
-            >
-              {product.label}
-              {product.status === "coming soon" && (
-                <span className="uppercase inline-block absolute -top-2.5 right-4 bg-[#3382FB] text-white px-2 text-sm">
-                  {" "}
-                  Coming soon{" "}
-                </span>
-              )}
-            </button>
-          ))}
+        <div ref={containerRef} className="overflow-x-auto no-scrollbar px-4">
+          <div className="flex text-nowrap md:flex-wrap xl:justify-center mx-auto w-fit gap-x-4 gap-y-6 xlg:gap-x-6 mt-8 lg:mt-12 ">
+            {productsData.map((product, idx) => (
+              <button
+                onClick={() => handleProductChange(idx)}
+                key={idx}
+                ref={(el: HTMLButtonElement) => {
+                  if (tabRef.current) {
+                    tabRef.current[idx] = el;
+                  }
+                }}
+                className={cn(
+                  "relative border-white/50 border-[1px] custom-text-18  text-white/50 hover:bg-skyBlue/30 py-3 xlg:py-4 2xl:py-5 px-3 2xl:px-9 cursor-pointer transition-all  duration-300",
+                  {
+                    "border-white": activeProduct === idx,
+                    "text-white ": activeProduct === idx,
+                  }
+                )}
+              >
+                {product.label}
+                {product.status === "coming soon" && (
+                  <span className="uppercase inline-block absolute -top-2.5 right-4 bg-[#3382FB] text-white px-2 text-sm">
+                    {" "}
+                    Coming soon{" "}
+                  </span>
+                )}
+              </button>
+            ))}
+          </div>
         </div>
-        <ProductCard product={activeProductData} />
+        <div className="w-container ">
+          <ProductCard product={activeProductData} />
+        </div>
       </div>
     </section>
   );
@@ -343,7 +367,10 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
 
   return (
     <div ref={cardRef} className="">
-      <div ref={imageContainerRef} className="h-80 2xl:h-90 relative mt-2">
+      <div
+        ref={imageContainerRef}
+        className=" h-60 md:h-80 2xl:h-90 relative mt-2"
+      >
         {/* Render all images stacked, control visibility with GSAP */}
         {product.images.map((imageSrc, idx) => (
           <Image
@@ -408,10 +435,10 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
         )}
       </div>
 
-      <div className="grid grid-cols-[0.7fr_1.3fr] gap-x-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-x-20 xlg:gap-x-30 mt-2">
+      <div className="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr] gap-x-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-x-20 xlg:gap-x-30 mt-2">
         <div className="justify-self-center pc-left">
           {product.title}
-          <div className="mt-8">
+          <div className="mt-8 md:block hidden">
             <Button
               text={product.ctaText}
               link={product.ctaLink}
@@ -425,11 +452,11 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
         </div>
 
         <div>
-          <ul className="grid grid-cols-2 gap-y-4 text-white custom-text-20">
+          <ul className="grid grid-cols-1 md:grid-cols-2 list-disc md:list-none ml-3 md:ml-0  gap-y-2 md:gap-y-4 text-white custom-text-20 mt-4 md:mt-0 items-end">
             {product.features.map((feature, idx) => (
               <li
                 key={idx}
-                className="border-b border-white/50 pb-1 xlg:pb-3 pr-12 pc-feature"
+                className=" md:border-b border-white/50 pb-1 xlg:pb-3 pr-4 md:pr-10 lg:pr-12 pc-feature"
               >
                 {feature}
               </li>
