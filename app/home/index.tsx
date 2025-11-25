@@ -1,6 +1,9 @@
 import { Banner } from "./banner";
+import CreateChange from "./create-change";
 import OurValues from "./our-values";
 import OurValuesPartTwo from "./our-values-part-two";
+import VtolLogistics from "./vtol-logistic";
+import WhyChooseMirach from "./why-choose";
 
 export default function HomePage() {
   return (
@@ -8,6 +11,11 @@ export default function HomePage() {
       <Banner />
       <OurValues />
       <OurValuesPartTwo />
+    
+        {/* <VtolLogistics /> */}
+        <WhyChooseMirach />
+        <CreateChange/>
+
     </>
   );
 }

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+
+
 @theme inline {
   /* Core Colors */
   --color-blue: #2a2b7d;
@@ -11,6 +13,7 @@
   /* Secondary / Brand Colors */
   --color-darkGray: #656565;
   --color-lightGray: #d0d0d1;
+  --color-gray:#EEEEEE
 
   /* Gradient Colors */
 
