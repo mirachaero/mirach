@@ -38,7 +38,7 @@ const values = [
 
 export default function OurValuesPartTwo() {
   return (
-    <section className="relative w-full   py-20 overflow-hidden">
+    <div className="relative w-full  blade-top-margin blade-bottom-margin overflow-hidden">
       {/* Background Grid */}
       <div className="absolute inset-0 z-0 ">
         <Image
@@ -51,9 +51,9 @@ export default function OurValuesPartTwo() {
 
       <div className="w-container relative z-10">
         {/* Top Section: Vision & Mission */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-60 blade-bottom-margin">
-          <div className="text-center md:text-left max-w-md justify-self-end">
-            <h3 className="text-white custom-text-28 font-medium mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-30 xl:gap-x-60 blade-bottom-margin">
+          <div className=" max-w-md justify-self-end">
+            <h3 className="text-white custom-text-28 font-medium mb-2 md:mb-4">
               Vision
             </h3>
             <p className="text-lightGray custom-text-24 font-light ">
@@ -66,8 +66,8 @@ export default function OurValuesPartTwo() {
               systems with Artificial Intelligence inbuilt.
             </p>
           </div>
-          <div className="text-center md:text-left max-w-md justify-self-start">
-            <h3 className="text-white custom-text-28 font-medium mb-4">
+          <div className="  max-w-md justify-self-start">
+            <h3 className="text-white custom-text-28 font-medium mb-2 md:mb-4">
               Mission
             </h3>
             <p className="text-lightGray custom-text-24  font-light ">
@@ -82,7 +82,7 @@ export default function OurValuesPartTwo() {
         {/* Central Section: Values */}
         <div className="relative flex flex-col items-center justify-center  ">
           {/* Center Circle */}
-          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0    w-full h-full  flex items-center justify-center">
+          <div className=" absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 w-[50%] h-[50%] lg:w-[80%] lg:h-[80%] xl:w-[90%] xl:h-[90%]  xlg:w-full xlg:h-full  hidden lg:flex items-center justify-center">
             <Image
               src="/assets/home/our-values/our-values.png"
               alt="Our Values"
@@ -95,7 +95,7 @@ export default function OurValuesPartTwo() {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-x-10 gap-y-10 lg:gap-y-60   relative z-10 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-x-10 gap-y-6 md:gap-y-10 lg:gap-y-40  xlg:gap-y-60   relative z-10 ">
             {values.map((value, index) => (
               <div
                 key={value.id}
@@ -104,7 +104,7 @@ export default function OurValuesPartTwo() {
                     "linear-gradient(249deg, rgba(255, 255, 255, 0.03) 39.75%, rgba(255, 255, 255, 0.18) 97.22%)",
                   backdropFilter: "blur(163.5093231201172px)",
                 }}
-                className={`relative  bg-white/5 backdrop-blur-sm border border-white/30 p-6  max-w-[460px] mx-auto lg:mx-0 
+                className={`relative  bg-white/5 backdrop-blur-sm border border-white/30 p-4 md:p-6  max-w-[400px] xlg:max-w-[460px] mx-auto lg:mx-0 
                   ${
                     index % 2 === 0
                       ? " justify-self-start "
@@ -113,8 +113,8 @@ export default function OurValuesPartTwo() {
                  
                 `}
               >
-                <div className="flex justify-between items-start mb-4">
-                  <div className="relative w-12 h-12 md:w-20 md:h-20 ">
+                <div className="flex justify-between items-start mb-10 lg:mb-4">
+                  <div className="relative w-12 h-12 xl:w-14 xl:h-14 xlg:w-20 xlg:h-20 ">
                     <Image
                       src={value.icon}
                       alt={value.title}
@@ -122,12 +122,12 @@ export default function OurValuesPartTwo() {
                       className="object-contain"
                     />
                   </div>
-                  <span className="text-gray-400 text-sm">/{value.id}</span>
+                  <span className="text-lightGray text-lg">/{value.id}</span>
                 </div>
-                <h4 className="text-skyBlue custom-text-28 mb-3">
+                <h4 className="text-skyBlue custom-text-28 mb-2 md:mb-3">
                   {value.title}
                 </h4>
-                <p className="text-lightGray custom-text-16 font-normal pr-10">
+                <p className="text-lightGray custom-text-16 font-normal  pr-6 xl:pr-10">
                   {value.description}
                 </p>
               </div>
@@ -135,6 +135,6 @@ export default function OurValuesPartTwo() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

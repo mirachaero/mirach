@@ -6,7 +6,7 @@ import React from "react";
 import { cn } from "@/src/utils/cn";
 import LoadingSpinner from "@/src/components/atoms/loading";
 
-type ButtonTheme = "blue" | "transparent" ;
+type ButtonTheme = "blue" | "transparent";
 type ButtonSize = "small" | "base" | "large";
 
 type HeroBtnProps = {
@@ -34,7 +34,7 @@ const sizeClasses: Record<ButtonSize, string> = {
 const themeClasses: Record<ButtonTheme, string> = {
   blue: " bg-linear-90 from-10% from-[#0B346F] to-[#5978FF] hover:bg-linear-180  border text-white border-white hover:shadow-lg ",
   transparent:
-    "bg-transparent text-white border border-white   hover:bg-white hover:text-black hover:shadow-lg hover:shadow-white/20",
+    "bg-transparent text-blue border-[2px] border-skyBlue/50   hover:bg-skyBlue/20 hover:text-blue   ",
 };
 
 export function Button({
@@ -50,7 +50,7 @@ export function Button({
   target = "_self",
   role = "button",
   className = "",
-  innerRef
+  innerRef,
 }: HeroBtnProps) {
   const sizeClass = sizeClasses[size];
   const themeClass = themeClasses[theme];
