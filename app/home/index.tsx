@@ -11,8 +11,9 @@ export default function HomePage() {
       <OurValues />
       {/* <Domains /> */}
       <Products />
-      <WhyChooseMirach />
-      <CreateChange />
+        {/* <VtolLogistics /> */}
+       <WhyChooseMirach />
+        <CreateChange/>
     </>
   );
 }
