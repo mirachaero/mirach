@@ -13,7 +13,7 @@
   /* Secondary / Brand Colors */
   --color-darkGray: #656565;
   --color-lightGray: #d0d0d1;
-  --color-gray:#EEEEEE
+  --color-gray:#EEEEEE;
 
   /* Gradient Colors */
 
@@ -182,7 +182,7 @@
 @font-face {
   font-family: "Neue Montreal";
 
-  src: local("Neue Montreal Medium"), local("NeueMontreal-Medium"),
+  src:  
     url("/fonts/NeueMontreal-Medium.woff2") format("woff2"),
     url("/fonts/NeueMontreal-Medium.woff") format("woff"),
     url("/fonts/NeueMontreal-Medium.ttf") format("truetype");
@@ -192,7 +192,7 @@
 
 @font-face {
   font-family: "Neue Montreal";
-  src: local("Neue Montreal Light Italic"), local("NeueMontreal-LightItalic"),
+  src: 
     url("/fonts/NeueMontreal-LightItalic.woff2") format("woff2"),
     url("/fonts/NeueMontreal-LightItalic.woff") format("woff"),
     url("/fonts/NeueMontreal-LightItalic.ttf") format("truetype");
@@ -202,7 +202,7 @@
 
 @font-face {
   font-family: "Neue Montreal";
-  src: local("Neue Montreal Medium Italic"), local("NeueMontreal-MediumItalic"),
+  src:  
     url("/fonts/NeueMontreal-MediumItalic.woff2") format("woff2"),
     url("/fonts/NeueMontreal-MediumItalic.woff") format("woff"),
     url("/fonts/NeueMontreal-MediumItalic.ttf") format("truetype");
@@ -212,7 +212,7 @@
 
 @font-face {
   font-family: "Neue Montreal";
-  src: local("Neue Montreal Bold"), local("NeueMontreal-Bold"),
+  src: 
     url("/fonts/NeueMontreal-Bold.woff2") format("woff2"),
     url("/fonts/NeueMontreal-Bold.woff") format("woff"),
     url("/fonts/NeueMontreal-Bold.ttf") format("truetype");
@@ -222,7 +222,7 @@
 
 @font-face {
   font-family: "Neue Montreal";
-  src: local("Neue Montreal Bold Italic"), local("NeueMontreal-BoldItalic"),
+  src:  
     url("/fonts/NeueMontreal-BoldItalic.woff2") format("woff2"),
     url("/fonts/NeueMontreal-BoldItalic.woff") format("woff"),
     url("/fonts/NeueMontreal-BoldItalic.ttf") format("truetype");
@@ -232,7 +232,7 @@
 
 @font-face {
   font-family: "Neue Montreal";
-  src: local("Neue Montreal Italic"), local("NeueMontreal-Italic"),
+  src:  
     url("/fonts/NeueMontreal-Italic.woff2") format("woff2"),
     url("/fonts/NeueMontreal-Italic.woff") format("woff"),
     url("/fonts/NeueMontreal-Italic.ttf") format("truetype");
@@ -242,7 +242,7 @@
 
 @font-face {
   font-family: "Neue Montreal";
-  src: local("Neue Montreal Light"), local("NeueMontreal-Light"),
+  src:  
     url("/fonts/NeueMontreal-Light.woff2") format("woff2"),
     url("/fonts/NeueMontreal-Light.woff") format("woff"),
     url("/fonts/NeueMontreal-Light.ttf") format("truetype");
@@ -252,7 +252,7 @@
 
 @font-face {
   font-family: "Neue Montreal";
-  src: local("Neue Montreal Regular"), local("NeueMontreal-Regular"),
+  src:  
     url("/fonts/NeueMontreal-Regular.woff2") format("woff2"),
     url("/fonts/NeueMontreal-Regular.woff") format("woff"),
     url("/fonts/NeueMontreal-Regular.ttf") format("truetype");
