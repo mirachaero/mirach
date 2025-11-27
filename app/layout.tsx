@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/src/components/organisms/header";
 import { Lenis } from "@/src/lib/lenisSmoothScroll";
+import { Footer } from "@/src/components/organisms/footer";
 
 export const metadata: Metadata = {
   title: "Mirach",
@@ -58,6 +59,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Lenis root options={{}} />
+        <Footer />
       </body>
     </html>
   );

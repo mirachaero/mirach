@@ -4,14 +4,15 @@ import OurValues from "./our-values";
 import WhyChooseMirach from "./why-choose";
 import Domains from "./domains";
 import Products from "./products";
+import VtolLogistics from "./vtol-logistic";
 export default function HomePage() {
   return (
     <>
       <Banner />
       <OurValues />
-      {/* <Domains /> */}
+      <Domains />
       <Products />
-        {/* <VtolLogistics /> */}
+        <VtolLogistics />
        <WhyChooseMirach />
         <CreateChange/>
     </>

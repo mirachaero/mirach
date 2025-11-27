@@ -1,6 +1,12 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import gsap from "gsap";
 
+gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
 const values = [
   {
     id: "01",
@@ -37,6 +43,50 @@ const values = [
 ];
 
 export default function OurValuesPartTwo() {
+  const pathRef1 = useRef<SVGPathElement>(null);
+  const pathRef2 = useRef<SVGPathElement>(null);
+  const pathRef3 = useRef<SVGPathElement>(null);
+  const pathRef4 = useRef<SVGPathElement>(null);
+  
+  const cardsRef=useRef<HTMLDivElement[]>([])
+
+  useGSAP(() => {
+    if (
+      !pathRef1.current ||
+      !pathRef2.current ||
+      !pathRef3.current ||
+      !pathRef4.current
+    ) {
+      return;
+    }
+    const path1=pathRef1.current;
+    const path2=pathRef2.current;
+    const path3=pathRef3.current;
+    const path4=pathRef4.current;
+
+    console.log(pathRef1.current); 
+    gsap.set([path1,path2,path3,path4],{
+ drawSVG: "99% 100%",
+    })
+    
+    const tl=gsap.timeline({defaults:{
+      duration:4
+    }});
+
+    tl.to(path1, {
+      drawSVG: "0% 100%",
+    });
+    tl.to(path2, {
+      drawSVG: "0% 100%",
+    });
+    tl.to(path3, {
+      drawSVG: "0% 100%",
+    });
+    tl.to(path4, {
+      drawSVG: "0% 100%",
+    });
+
+  });
   return (
     <div className="relative w-full  blade-top-margin blade-bottom-margin overflow-hidden">
       {/* Background Grid */}
@@ -84,21 +134,50 @@ export default function OurValuesPartTwo() {
           {/* Center Circle */}
           <div className=" absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 w-[50%] h-[50%] lg:w-[80%] lg:h-[80%] xl:w-[90%] xl:h-[90%]  xlg:w-full xlg:h-full  hidden lg:flex items-center justify-center">
             <Image
-              src="/assets/home/our-values/our-values.png"
+              src="/assets/home/our-values/our-values.svg"
               alt="Our Values"
               fill
-              className="animate-pulse-slow object-contain"
+              className="animate-pulse-slow object-contain "
             />
             {/* <span className="absolute text-white custom-text-28   font-medium">
               Our values
             </span> */}
+
+            <svg width="1478" height="536" viewBox="0 0 1478 536" fill="none">
+              <g opacity="1">
+                <path
+                  ref={pathRef1}
+                  d="M444 1H538.654L608.87 116.012"
+                  stroke="#66676A"
+                />
+                <path
+                  ref={pathRef2}
+                  d="M1046.7 1H945.445L874.724 105.121"
+                  stroke="#66676A"
+                />
+                <path
+                  ref={pathRef3}
+                  d="M444 531.57H538.662C577.997 462.748 578.513 463.554 617.848 394.732"
+                  stroke="#66676A"
+                />
+                <path
+                  ref={pathRef4}
+                  d="M1046.7 531.219H945.421L858.527 402.941"
+                  stroke="#66676A"
+                />
+              </g>
+            </svg>
+            <div className="absolute left-[50.3%] top-[48.2%] bg-blue aspect-square w-[14.3%] rounded-full -translate-x-1/2 flex items-center justify-center -translate-y-1/2 text-white custom-text-28 font-medium">
+              Our values
+            </div>
           </div>
 
           {/* Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-x-10 gap-y-6 md:gap-y-10 lg:gap-y-40  xlg:gap-y-60   relative z-10 ">
             {values.map((value, index) => (
               <div
-                key={value.id}
+                key={value.id} 
+                // ref={(el:HTMLDivElement)=>{cardsRef?.current[index]=el}
                 style={{
                   background:
                     "linear-gradient(249deg, rgba(255, 255, 255, 0.03) 39.75%, rgba(255, 255, 255, 0.18) 97.22%)",
