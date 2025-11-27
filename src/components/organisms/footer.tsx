@@ -14,7 +14,7 @@ const footerLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="relative bg-gray">
+    <footer className="relative bg-gray blade-top-padding-lg">
       <div className="w-container">
         {/* CTA Section */}
         <div className="text-center">

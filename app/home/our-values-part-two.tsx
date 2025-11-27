@@ -43,49 +43,113 @@ const values = [
 ];
 
 export default function OurValuesPartTwo() {
+  const containerRef = useRef<HTMLDivElement>(null);
   const pathRef1 = useRef<SVGPathElement>(null);
   const pathRef2 = useRef<SVGPathElement>(null);
   const pathRef3 = useRef<SVGPathElement>(null);
   const pathRef4 = useRef<SVGPathElement>(null);
-  
-  const cardsRef=useRef<HTMLDivElement[]>([])
+
+  const cardsRef = useRef<HTMLDivElement[]>([]);
 
   useGSAP(() => {
     if (
       !pathRef1.current ||
       !pathRef2.current ||
       !pathRef3.current ||
-      !pathRef4.current
+      !pathRef4.current ||
+      !containerRef.current
     ) {
       return;
     }
-    const path1=pathRef1.current;
-    const path2=pathRef2.current;
-    const path3=pathRef3.current;
-    const path4=pathRef4.current;
+    const path1 = pathRef1.current;
+    const path2 = pathRef2.current;
+    const path3 = pathRef3.current;
+    const path4 = pathRef4.current;
 
-    console.log(pathRef1.current); 
-    gsap.set([path1,path2,path3,path4],{
- drawSVG: "99% 100%",
-    })
-    
-    const tl=gsap.timeline({defaults:{
-      duration:4
-    }});
+    console.log(pathRef1.current);
+    gsap.set([path1, path2, path3, path4], {
+      drawSVG: "100% 100%",
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 50%",
+        // markers: true,
+      },
+      defaults: {
+        duration: 1,
+      },
+    });
 
     tl.to(path1, {
       drawSVG: "0% 100%",
     });
+    tl.fromTo(
+      cardsRef.current[0],
+      {
+        opacity: 0,
+        duration: 0.3,
+        x: 20,
+        ease: "power2.out",
+      },
+      {
+        x: 0,
+        opacity: 1,
+      },
+      "-=0.35"
+    );
     tl.to(path2, {
       drawSVG: "0% 100%",
     });
+    tl.fromTo(
+      cardsRef.current[1],
+      {
+        opacity: 0,
+        duration: 0.3,
+        x: -20,
+        ease: "power2.out",
+      },
+      {
+        x: 0,
+        opacity: 1,
+      },
+      "-=0.35"
+    );
     tl.to(path3, {
       drawSVG: "0% 100%",
     });
+    tl.fromTo(
+      cardsRef.current[2],
+      {
+        opacity: 0,
+        duration: 0.3,
+        x: 20,
+        ease: "power2.out",
+      },
+      {
+        x: 0,
+        opacity: 1,
+      },
+      "-=0.35"
+    );
     tl.to(path4, {
       drawSVG: "0% 100%",
     });
-
+    tl.fromTo(
+      cardsRef.current[3],
+      {
+        opacity: 0,
+        duration: 0.3,
+        x: -20,
+        ease: "power2.out",
+      },
+      {
+        x: 0,
+        opacity: 1,
+      },
+      "-=0.35"
+    );
   });
   return (
     <div className="relative w-full  blade-top-margin blade-bottom-margin overflow-hidden">
@@ -130,14 +194,17 @@ export default function OurValuesPartTwo() {
         </div>
 
         {/* Central Section: Values */}
-        <div className="relative flex flex-col items-center justify-center  ">
+        <div
+          ref={containerRef}
+          className="relative flex flex-col items-center justify-center  "
+        >
           {/* Center Circle */}
           <div className=" absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 w-[50%] h-[50%] lg:w-[80%] lg:h-[80%] xl:w-[90%] xl:h-[90%]  xlg:w-full xlg:h-full  hidden lg:flex items-center justify-center">
             <Image
               src="/assets/home/our-values/our-values.svg"
               alt="Our Values"
               fill
-              className="animate-pulse-slow object-contain "
+              className="animate-pulse-slow object-contain spin "
             />
             {/* <span className="absolute text-white custom-text-28   font-medium">
               Our values
@@ -176,8 +243,12 @@ export default function OurValuesPartTwo() {
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-x-10 gap-y-6 md:gap-y-10 lg:gap-y-40  xlg:gap-y-60   relative z-10 ">
             {values.map((value, index) => (
               <div
-                key={value.id} 
-                // ref={(el:HTMLDivElement)=>{cardsRef?.current[index]=el}
+                key={value.id}
+                ref={(el: HTMLDivElement) => {
+                  if (cardsRef.current && el) {
+                    cardsRef.current[index] = el;
+                  }
+                }}
                 style={{
                   background:
                     "linear-gradient(249deg, rgba(255, 255, 255, 0.03) 39.75%, rgba(255, 255, 255, 0.18) 97.22%)",

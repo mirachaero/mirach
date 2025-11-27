@@ -112,7 +112,7 @@
     @apply text-[28px] leading-[1.2em]
     lg:text-[36px] lg:leading-[1.1em]
     xlg:text-[42px]   
-    2xl:text-[48px]; 
+    2xl:text-[48px];
   }
 
   .custom-text-36 {
@@ -321,12 +321,15 @@
 }
 
 @keyframes spin_360 {
-  from {
+  0% {
     transform: rotate(0deg);
   }
 
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 

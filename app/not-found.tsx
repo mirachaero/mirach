@@ -35,9 +35,7 @@ export default function NotFound() {
             Page Not Found
           </h2>
           <p className="custom-text-24 mx-auto max-w-xl text-lightGray md:max-w-2xl lg:max-w-3xl leading-relaxed">
-            The page you're looking for seems to have drifted into uncharted
-            airspace. <br className="hidden md:block" />
-            Let's get you back on course.
+            Oops! This page flew away. Let's get you back home.
           </p>
         </div>
 
