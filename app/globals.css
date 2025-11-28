@@ -346,3 +346,12 @@
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.char {
+  display: inline-block;
+}

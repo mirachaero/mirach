@@ -7,6 +7,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
+import AnimateText from "../molecules/AnimateText";
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -27,7 +28,6 @@ export const Footer = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: footerRef.current,
@@ -75,7 +75,6 @@ export const Footer = () => {
           },
           "-=0.6"
         );
-
       }
     }, footerRef);
 
@@ -95,10 +94,7 @@ export const Footer = () => {
             aerial missions.
           </h2>
 
-          <div
-
-            className="grid md:flex flex-wrap justify-center xl:grid grid-cols-2 md:grid-cols-5 text-nowrap gap-3 md:gap-4 lg:gap-6 mt-8 md:mt-10 "
-          >
+          <div className="grid md:flex flex-wrap justify-center xl:grid grid-cols-2 md:grid-cols-5 text-nowrap gap-3 md:gap-4 lg:gap-6 mt-8 md:mt-10 ">
             {footerLinks.map((link, idx) => (
               <Button
                 key={link.name}
@@ -107,8 +103,9 @@ export const Footer = () => {
                 size="large"
                 link={link.href}
                 role="link"
-                className={` text-black border-white xl:text-lg font-medium   xl:w-full xl:py-4 2xl:py-6 ${idx === 4 ? "col-span-2" : ""
-                  } md:col-span-1`}
+                className={` text-black border-white xl:text-lg font-medium   xl:w-full xl:py-4 2xl:py-6 ${
+                  idx === 4 ? "col-span-2" : ""
+                } md:col-span-1`}
               />
             ))}
           </div>
@@ -130,11 +127,11 @@ export const Footer = () => {
           </div>
 
           {/* Brand Name */}
-          <h3
-            className="text-[35px] md:text-[60px] lg:text-[80px] xl:text-[100px] xlg:text-[116px] font-medium text-[#9E9FBF]/80  "
-          >
-            MIRACH AEROSPACE
-          </h3>
+          <AnimateText onscroll>
+            <h3 className="text-[35px] md:text-[60px] lg:text-[80px] xl:text-[100px] xlg:text-[116px] font-medium text-[#9E9FBF]/80  ">
+              MIRACH AEROSPACE
+            </h3>
+          </AnimateText>
         </div>
 
         {/* Social Media Icons */}

@@ -11,11 +11,16 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 export default function AnimateText({
   onscroll = false,
   children,
+  intialColor = "#363636",
+  finalColor = "#d0d0d1",
 }: {
   onscroll?: boolean;
   children: ReactNode;
+  intialColor?: string;
+  finalColor?: string;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const splitRef = useRef<SplitText | null>(null);
 
   useGSAP(() => {
     if (!containerRef.current) return;
@@ -23,61 +28,101 @@ export default function AnimateText({
     const child = containerRef.current.firstElementChild as HTMLElement | null;
     if (!child) return;
 
-    const split = new SplitText(child, { type: "chars", ignore:"span"  });
+    const initAnimation = () => {
+      if (splitRef.current) {
+        splitRef.current.revert();
+      }
 
-    gsap.set(split.chars, { color: "#363636 " });
+      ScrollTrigger.getAll().forEach((st) => {
+        if (st.trigger === containerRef.current) {
+          st.kill();
+        }
+      });
 
-    if (onscroll) {
-      console.log(containerRef.current?.offsetHeight)
+      // Split by words first, then chars - keeps words together
+      splitRef.current = new SplitText(child, {
+        type: "words,chars",
+        wordsClass: "word",
+        charsClass: "char",
+        ignore: "span, br, b",
+      });
+
+      gsap.set(splitRef.current.chars, { color: intialColor });
+
+      if (onscroll) {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 85%", 
-            //  end: () => "+=" + (child?.offsetHeight || 200),
-             end: "+=300",
-            // markers: true,
+            start: "top 85%",
+            end: "+=300",
             scrub: true,
             toggleActions: "play none none none",
           },
         });
 
-        tl.to(split.chars, {
+        tl.to(
+          splitRef.current.chars,
+          {
+            color: "#6da7ff",
+            duration: 0.25,
+            ease: "power1.out",
+            stagger: { each: 0.02, from: "start" },
+          },
+          "<"
+        ).to(
+          splitRef.current.chars,
+          {
+            color: finalColor,
+            duration: 0.25,
+            ease: "power1.out",
+            stagger: { each: 0.03, from: "start" },
+          },
+          "<"
+        );
+      } else {
+        gsap.to(splitRef.current.chars, {
           color: "#6da7ff",
           duration: 0.25,
           ease: "power1.out",
-          stagger: { each: 0.02, from: "start" },
-        },"<") 
+          stagger: {
+            each: 0.03,
+            from: "start",
+          },
+        });
 
-        .to(split.chars, {
-          color: "#d0d0d1",
+        gsap.to(splitRef.current.chars, {
+          color: finalColor,
           duration: 0.25,
           ease: "power1.out",
-          stagger: { each: 0.03, from: "start" },
-        },"<");
-      
-    } else {
-      gsap.to(split.chars, {
-        color: "#6da7ff",
-        duration: 0.25,
-        ease: "power1.out",
-        stagger: {
-          each: 0.03,
-          from: "start",
-        },
-      });
+          delay: 0.1,
+          stagger: {
+            each: 0.04,
+            from: "start",
+          },
+        });
+      }
+    };
 
-      gsap.to(split.chars, {
-        color: "#d0d0d1",
-        duration: 0.25,
-        ease: "power1.out",
-        delay: 0.1,
-        stagger: {
-          each: 0.04,
-          from: "start",
-        },
-      });
-    }
-  }, []);
+    initAnimation();
+
+    let resizeTimer: NodeJS.Timeout;
+    const handleResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        initAnimation();
+        ScrollTrigger.refresh();
+      }, 250);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      if (splitRef.current) {
+        splitRef.current.revert();
+      }
+    };
+  }, [onscroll]);
 
   return <div ref={containerRef}>{children}</div>;
 }

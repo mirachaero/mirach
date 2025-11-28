@@ -5,16 +5,17 @@ import WhyChooseMirach from "./why-choose";
 import Domains from "./domains";
 import Products from "./products";
 import VtolLogistics from "./vtol-logistic";
+
 export default function HomePage() {
   return (
-    <>
+    <main className="home-page-wapper">
       <Banner />
       <OurValues />
       <Domains />
       <Products />
-        <VtolLogistics />
-       <WhyChooseMirach />
-        <CreateChange/>
-    </>
+      <VtolLogistics />
+      <WhyChooseMirach />
+      <CreateChange />
+    </main>
   );
 }
