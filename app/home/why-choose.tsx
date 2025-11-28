@@ -1,4 +1,10 @@
+"use client"
 import Image from "next/image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type profileProps = {
   image: string;
@@ -6,6 +12,7 @@ type profileProps = {
   designation: string;
   linkedinUrl: string;
 };
+
 
 const profileData: profileProps[] = [
   {
@@ -22,21 +29,110 @@ const profileData: profileProps[] = [
   },
 ];
 
+
+
+
 export default function WhyChooseMirach() {
+
+  useGSAP(() => {
+
+    // Animate heading with powerful slide and fade effect
+    gsap.from(".why-choose-heading", {
+      y: 80,
+      opacity: 0,
+      duration: 1,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: ".why-choose-heading",
+        start: "top 85%",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Animate paragraphs with stagger
+    gsap.from(".why-choose-text p", {
+      y: 60,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".why-choose-text",
+        start: "top 80%",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Strong attractive animation for left content container with 3D effect
+    gsap.from(".why-choose-left", {
+      x: -100,
+      rotationY: -15,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: ".why-choose-left",
+        start: "top 75%",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Parallax effect on scroll for left content
+    gsap.to(".why-choose-left", {
+      y: -30,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".why-choose-section",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1
+      }
+    });
+
+    // Animate profile cards with powerful entrance
+    gsap.from(".profile-card", {
+      scale: 0.8,
+      y: 80,
+      rotationX: -20,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: "back.out(1.4)",
+      scrollTrigger: {
+        trigger: ".profile-cards-container",
+        start: "top 80%",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+
+    gsap.utils.toArray<HTMLElement>(".profile-card").forEach((card) => {
+      const tl = gsap.timeline({ paused: true });
+      tl.to(card, {
+        y: -10,
+        duration: 0.3,
+        ease: "power2.out"
+      });
+
+      card.addEventListener("mouseenter", () => tl.play());
+      card.addEventListener("mouseleave", () => tl.reverse());
+    });
+  })
+
   return (
-    <section className="  overflow-hidden">
-      <div className="w-container  relative ">
-        <div className="absolute  inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.9)_0%,rgba(238,238,238,1)_90%)]   scale-125 z-0">
+    <section className="overflow-hidden why-choose-section">
+      <div className="w-container relative">
+        <div className="why-choose-bg absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.9)_0%,rgba(238,238,238,1)_90%)] scale-125 z-0">
           {" "}
         </div>
 
-        <div className="relative z-10 flex flex-col xl:flex-row gap-6 ">
-          <div className="w-full   xl:w-1/2  blade-top-padding-lg  ">
-            <h3 className="text-blue font-medium custom-text-48">
+        <div className="relative z-10 flex flex-col xl:flex-row gap-6">
+          <div className="why-choose-left w-full xl:w-1/2 blade-top-padding-lg" style={{ perspective: "1000px" }}>
+            <h3 className="why-choose-heading text-blue font-medium custom-text-48">
               Why choose <b className="text-skyBlue font-normal">Mirach</b>
             </h3>
 
-            <div className="w-full lg:max-w-3xl xl:max-w-xl custom-text-24 text-darkGray">
+            <div className="why-choose-text w-full lg:max-w-3xl xl:max-w-xl custom-text-24 text-darkGray">
               <p className="py-4 lg:py-6">
                 With a combined experience of over two decades in
                 <span className="text-black">
@@ -47,18 +143,18 @@ export default function WhyChooseMirach() {
                 Mirach Aerospace empowers clients with scale and reliability.
               </p>
               <p>
-                It’s a mix of seasoned professionals and young drone
+                It's a mix of seasoned professionals and young drone
                 enthusiasts, collaborating to deliver reliable, cutting-edge
                 performance across all applications.
               </p>
             </div>
           </div>
 
-          <div className="w-full  xl:w-1/2  xl:border-l-2 border-white">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-8 xl:gap-12 xl:mx-6 blade-bottom-margin-sm xlg:mx-10 mt-6 xl:mt-28">
+          <div className="w-full xl:w-1/2 xl:border-l-2 border-white">
+            <div className="profile-cards-container grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-8 xl:gap-12 xl:mx-6 blade-bottom-margin-sm xlg:mx-10 mt-6 xl:mt-28">
               {profileData.map((ele, index) => {
                 return (
-                  <div key={index}>
+                  <div key={index} className="profile-card" style={{ perspective: "1000px" }}>
                     <Card data={ele} />
                   </div>
                 );
@@ -74,24 +170,24 @@ export default function WhyChooseMirach() {
 const Card = ({ data }: { data: profileProps }) => {
   return (
     <div className="">
-      <div className="p-4  border border-skyBlue">
-        <div className="h-80 lg:h-96 xl:h-64 xlg:h-72 2xl:h-80  relative ">
+      <div className="p-4   border border-skyBlue">
+        <div className="h-80  lg:h-96 xl:h-64 xlg:h-72 2xl:h-80 relative">
           <Image
             src={data.image}
             fill
             alt={data.name}
-            className="object-cover object-top "
+            className="object-cover object-top"
           />
         </div>
       </div>
-      <div className="flex justify-between items-center mt-2  lg:mt-4  mx-2">
+      <div className="flex justify-between items-center mt-2 lg:mt-4 mx-2">
         <div>
           <h6 className="custom-text-20 font-medium text-darkGray">
             {data.name}
           </h6>
           <p className="text-darkGray/90 text-lg">{data.designation}</p>
         </div>
-        <div className="border border-blue rounded-sm ">
+        <div className="border border-blue rounded-sm">
           <svg
             className="m-2"
             xmlns="http://www.w3.org/2000/svg"
