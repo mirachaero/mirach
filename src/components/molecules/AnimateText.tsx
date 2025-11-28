@@ -13,11 +13,13 @@ export default function AnimateText({
   children,
   intialColor = "#363636",
   finalColor = "#d0d0d1",
+  endIn = "300",
 }: {
   onscroll?: boolean;
   children: ReactNode;
   intialColor?: string;
   finalColor?: string;
+  endIn?: string;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const splitRef = useRef<SplitText | null>(null);
@@ -41,9 +43,7 @@ export default function AnimateText({
 
       // Split by words first, then chars - keeps words together
       splitRef.current = new SplitText(child, {
-        type: "words,chars",
-        wordsClass: "word",
-        charsClass: "char",
+        type: "words chars",
         ignore: "span, br, b",
       });
 
@@ -54,7 +54,8 @@ export default function AnimateText({
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 85%",
-            end: "+=300",
+            end: `+=${endIn}`,
+            // markers: true,
             scrub: true,
             toggleActions: "play none none none",
           },

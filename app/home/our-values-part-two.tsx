@@ -49,6 +49,7 @@ export default function OurValuesPartTwo() {
   const pathRef2 = useRef<SVGPathElement>(null);
   const pathRef3 = useRef<SVGPathElement>(null);
   const pathRef4 = useRef<SVGPathElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
 
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
@@ -68,107 +69,140 @@ export default function OurValuesPartTwo() {
     const path4 = pathRef4.current;
 
     console.log(pathRef1.current);
-    gsap.set([path1, path2, path3, path4], {
-      drawSVG: "100% 100%",
-    });
-    gsap.set(".main-svg-path", {
-      drawSVG: "100% 100%",
-    });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "center center",
-        // markers: true,
-        end: "+=4000",
-        scrub: 1,
-        pin: ".home-page-wapper",
+    const mm = gsap.matchMedia();
+    mm.add(
+      {
+        isLargeScreen: "(min-width: 1024px)",
       },
-    });
+      (context) => {
+        const { isLargeScreen } = context.conditions as {
+          isLargeScreen: boolean;
+        };
+        if (isLargeScreen) {
+          if (lineRef.current) {
+            gsap.from(lineRef.current, {
+              height: 0,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: lineRef.current,
+                start: "top center",
+                end: "top  top",
+                scrub: 1,
+              },
+            });
+          }
 
-    tl.to(".main-svg-path", {
-      drawSVG: "0% 100%",
-    });
-    tl.fromTo(
-      ".main-svg-decorate-elements",
-      {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
+          gsap.set([path1, path2, path3, path4], {
+            drawSVG: "100% 100%",
+          });
+          gsap.set(".main-svg-path", {
+            drawSVG: "100% 100%",
+          });
+
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "center center",
+
+              // markers: true,
+              end: "+=4000",
+              scrub: 1,
+              pin: ".home-page-wapper",
+              // pin: true,
+            },
+          });
+
+          tl.to(".main-svg-path", {
+            drawSVG: "0% 100%",
+          });
+          tl.fromTo(
+            ".main-svg-decorate-elements",
+            {
+              opacity: 0,
+            },
+            {
+              opacity: 1,
+            }
+          );
+          tl.to(path1, {
+            drawSVG: "0% 100%",
+          });
+          tl.fromTo(
+            cardsRef.current[0],
+            {
+              opacity: 0,
+              duration: 0.3,
+              x: 20,
+              ease: "power2.out",
+            },
+            {
+              x: 0,
+              opacity: 1,
+            },
+            "-=0.35"
+          );
+          tl.to(path2, {
+            drawSVG: "0% 100%",
+          });
+          tl.fromTo(
+            cardsRef.current[1],
+            {
+              opacity: 0,
+              duration: 0.3,
+              x: -20,
+              ease: "power2.out",
+            },
+            {
+              x: 0,
+              opacity: 1,
+            },
+            "-=0.35"
+          );
+          tl.to(path3, {
+            drawSVG: "0% 100%",
+          });
+          tl.fromTo(
+            cardsRef.current[2],
+            {
+              opacity: 0,
+              duration: 0.3,
+              x: 20,
+              ease: "power2.out",
+            },
+            {
+              x: 0,
+              opacity: 1,
+            },
+            "-=0.35"
+          );
+          tl.to(path4, {
+            drawSVG: "0% 100%",
+          });
+          tl.fromTo(
+            cardsRef.current[3],
+            {
+              opacity: 0,
+              duration: 0.3,
+              x: -20,
+              ease: "power2.out",
+            },
+            {
+              x: 0,
+              opacity: 1,
+            },
+            "-=0.35"
+          );
+        }
       }
-    );
-    tl.to(path1, {
-      drawSVG: "0% 100%",
-    });
-    tl.fromTo(
-      cardsRef.current[0],
-      {
-        opacity: 0,
-        duration: 0.3,
-        x: 20,
-        ease: "power2.out",
-      },
-      {
-        x: 0,
-        opacity: 1,
-      },
-      "-=0.35"
-    );
-    tl.to(path2, {
-      drawSVG: "0% 100%",
-    });
-    tl.fromTo(
-      cardsRef.current[1],
-      {
-        opacity: 0,
-        duration: 0.3,
-        x: -20,
-        ease: "power2.out",
-      },
-      {
-        x: 0,
-        opacity: 1,
-      },
-      "-=0.35"
-    );
-    tl.to(path3, {
-      drawSVG: "0% 100%",
-    });
-    tl.fromTo(
-      cardsRef.current[2],
-      {
-        opacity: 0,
-        duration: 0.3,
-        x: 20,
-        ease: "power2.out",
-      },
-      {
-        x: 0,
-        opacity: 1,
-      },
-      "-=0.35"
-    );
-    tl.to(path4, {
-      drawSVG: "0% 100%",
-    });
-    tl.fromTo(
-      cardsRef.current[3],
-      {
-        opacity: 0,
-        duration: 0.3,
-        x: -20,
-        ease: "power2.out",
-      },
-      {
-        x: 0,
-        opacity: 1,
-      },
-      "-=0.35"
     );
   });
   return (
-    <div className="relative w-full  blade-top-margin blade-bottom-margin overflow-hidden">
+    <div className="relative w-full  blade-top-padding blade-bottom-margin overflow-hidden">
+      <div
+        ref={lineRef}
+        className="lg:block hidden absolute left-1/2 -translate-x-[100%] top-0 h-[70%] w-px bg-white/30 "
+      ></div>
       {/* Background Grid */}
       <div className="absolute inset-0 z-0 ">
         <Image
@@ -229,9 +263,7 @@ export default function OurValuesPartTwo() {
             /> */}
 
             <svg
-              width="1478"
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-contain"
-              height="536"
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 w-full h-full -translate-y-1/2 object-contain"
               viewBox="0 0 1478 536"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -581,7 +613,7 @@ export default function OurValuesPartTwo() {
                 />
               </g>
             </svg>
-            <div className="absolute left-[50.3%] top-[48.2%] bg-blue aspect-square w-[14.3%] rounded-full -translate-x-1/2 flex items-center justify-center -translate-y-1/2 text-white custom-text-28 font-medium">
+            <div className="absolute left-[50.3%] top-[48.2%] bg-blue aspect-square w-[14.3%] rounded-full -translate-x-1/2 flex items-center justify-center -translate-y-1/2 text-white custom-text-28 text-lg xl:text-[28px] font-medium">
               Our values
             </div>
           </div>
