@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/src/components/atoms/button";
 import Link from "next/link";
+import AnimateText from "../molecules/AnimateText";
 
 
 const footerLinks = [
@@ -58,14 +59,6 @@ export const Footer = () => {
             />
           </div>
 
-<<<<<<< HEAD
-
-
-          <h3 className="text-[35px] md:text-[60px] lg:text-[80px] xl:text-[100px] xlg:text-[116px] font-medium text-[#9E9FBF]/80  ">
-            MIRACH AEROSPACE
-          </h3>
-
-=======
           {/* Brand Name */}
           <AnimateText
             onscroll
@@ -77,7 +70,6 @@ export const Footer = () => {
               MIRACH AEROSPACE
             </h3>
           </AnimateText>
->>>>>>> 88fa8ff485d3d1307db3672339b36bad39a59718
         </div>
 
 
