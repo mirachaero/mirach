@@ -1,14 +1,9 @@
-"use client";
+
 
 import Image from "next/image";
 import { Button } from "@/src/components/atoms/button";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TextPlugin } from "gsap/TextPlugin";
 
-gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 const footerLinks = [
   { name: "Invest", href: "#invest" },
@@ -19,86 +14,21 @@ const footerLinks = [
 ];
 
 export const Footer = () => {
-  const footerRef = useRef<HTMLElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const buttonsContainerRef = useRef<HTMLDivElement>(null);
-  const logoRef = useRef<HTMLDivElement>(null);
-  const socialIconsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: "top 60%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        },
-      });
-
-      if (headingRef.current) {
-        tl.from(headingRef.current, {
-          y: 60,
-          opacity: 0,
-          duration: 1,
-          ease: "power3.out",
-        });
-      }
-
-      if (logoRef.current) {
-        tl.from(
-          logoRef.current,
-          {
-            scale: 0,
-            rotation: -180,
-            opacity: 0,
-            duration: 1,
-            ease: "elastic.out(1, 0.5)",
-          },
-          "-=0.3"
-        );
-      }
-
-      if (socialIconsRef.current) {
-        const icons = socialIconsRef.current.querySelectorAll("a");
-        tl.from(
-          icons,
-          {
-            y: 30,
-            opacity: 0,
-            scale: 0,
-            rotation: 360,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: "back.out(1.7)",
-          },
-          "-=0.6"
-        );
-
-      }
-    }, footerRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
-    <footer ref={footerRef} className="relative bg-gray blade-top-padding-lg">
+    <footer className="relative bg-gray blade-top-padding-lg">
       <div className="w-container">
-        {/* CTA Section */}
+
         <div className="text-center">
           <h2
-            ref={headingRef}
             className="custom-text-48 text-blue font-medium "
           >
             Partner with Mirach Aerospace <br /> shape the future of unmanned
             aerial missions.
           </h2>
 
-          <div
-
-            className="grid md:flex flex-wrap justify-center xl:grid grid-cols-2 md:grid-cols-5 text-nowrap gap-3 md:gap-4 lg:gap-6 mt-8 md:mt-10 "
-          >
+          <div className="grid md:flex flex-wrap justify-center xl:grid grid-cols-2 md:grid-cols-5 text-nowrap gap-3 md:gap-4 lg:gap-6 mt-8 md:mt-10 ">
             {footerLinks.map((link, idx) => (
               <Button
                 key={link.name}
@@ -114,11 +44,10 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Logo and Brand Section */}
+
         <div className="flex flex-col items-center justify-center leading-none  border-b-3 border-white pb-4 md:b-6 mb-10">
-          {/* Logo */}
+
           <div
-            ref={logoRef}
             className="relative w-30 h-30 md:w-40 md:h-40 py-25 md:py-30 "
           >
             <Image
@@ -129,17 +58,16 @@ export const Footer = () => {
             />
           </div>
 
-          {/* Brand Name */}
-          <h3
-            className="text-[35px] md:text-[60px] lg:text-[80px] xl:text-[100px] xlg:text-[116px] font-medium text-[#9E9FBF]/80  "
-          >
+
+
+          <h3 className="text-[35px] md:text-[60px] lg:text-[80px] xl:text-[100px] xlg:text-[116px] font-medium text-[#9E9FBF]/80  ">
             MIRACH AEROSPACE
           </h3>
+
         </div>
 
-        {/* Social Media Icons */}
+
         <div
-          ref={socialIconsRef}
           className="flex items-center justify-center gap-4 pb-10 md:pb-12"
         >
           <Link href="#" target="_blank">

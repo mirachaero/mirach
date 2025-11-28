@@ -72,10 +72,10 @@ export default function OurValues() {
                   theme="blue"
                   size="large"
                   role="link"
-                  className="px-10 md:px-16 lg:py-3.5"
+                  className="px-10 md:px-16 lg:py-3.5 font-medium"
                 />
                 <Link
-                  className="custom-text-20 text-lg md:text-xl inline-block text-skyBlue relative after:absolute after:-bottom-2 after:left-0 after:w-8 hover:after:w-full after:h-px after:bg-skyBlue after:transition-all after:duration-600"
+                  className="font-medium custom-text-20 text-lg md:text-xl inline-block text-skyBlue relative after:absolute after:-bottom-2 after:left-0 after:w-8 hover:after:w-full after:h-px after:bg-skyBlue after:transition-all after:duration-600"
                   href="/initiatives"
                 >
                   Explore our initiatives

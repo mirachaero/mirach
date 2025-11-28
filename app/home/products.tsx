@@ -175,7 +175,7 @@ export default function Products() {
                   }
                 }}
                 className={cn(
-                  "relative border-white/50 border-[1px] custom-text-18  text-white/50 hover:bg-skyBlue/30 py-3 xlg:py-4 2xl:py-5 px-3 2xl:px-9 cursor-pointer transition-all  duration-300",
+                  "relative border-white/50 border-[1px] custom-text-18 font-medium text-white/50 hover:bg-skyBlue/30 py-3 xlg:py-4 2xl:py-5 px-3 2xl:px-9 cursor-pointer transition-all  duration-300",
                   {
                     "border-white": activeProduct === idx,
                     "text-white ": activeProduct === idx,
@@ -333,9 +333,7 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
         // Image animation
         tl.from(".pc-image-container", {
           opacity: 0,
-          scale: 1.2,
-          x: -100,
-          y: -100,
+          x:100
         });
 
         // Left block (title + button)
@@ -369,14 +367,14 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
     <div ref={cardRef} className="">
       <div
         ref={imageContainerRef}
-        className=" h-60 md:h-80 2xl:h-90 relative mt-2"
+        className=" h-60 md:h-80 2xl:h-80 relative mt-2"
       >
         {/* Render all images stacked, control visibility with GSAP */}
         {product.images.map((imageSrc, idx) => (
           <Image
             key={idx}
             src={imageSrc}
-            className="object-contain pc-image-container carousel-image absolute inset-0"
+            className="object-contain  pc-image-container carousel-image absolute inset-0"
             fill
             unoptimized
             alt={`${product.label} - Image ${idx + 1}`}
@@ -386,7 +384,7 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
 
         {/* Bullet indicators - only show if there are 2+ images */}
         {product.images.length > 1 && (
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          <div className="absolute  bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
             {product.images.map((_, idx) => (
               <button
                 key={idx}
@@ -420,7 +418,7 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
                     createAutoRotation();
                   });
                 }}
-                className="bullet-indicator w-3 h-3 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/60"
+                className="bullet-indicator  w-3 h-3 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/60"
                 style={{
                   backgroundColor:
                     idx === 0
@@ -435,10 +433,10 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
         )}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr] gap-x-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-x-20 xlg:gap-x-30 mt-2">
-        <div className="justify-self-center pc-left">
+      <div className="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr]  gap-x-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-x-20 xlg:gap-x-30 mt-2">
+        <div className="justify-self-center pc-left ">
           {product.title}
-          <div className="mt-8 md:block hidden">
+          <div className="mt-8 md:block hidden  w-fit">
             <Button
               text={product.ctaText}
               link={product.ctaLink}
@@ -446,7 +444,7 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
               type="button"
               theme="blue"
               size="large"
-              className="px-8"
+              className="px-8 font-medium"
             />
           </div>
         </div>

@@ -42,11 +42,10 @@ export default function Domains() {
               role="button"
               type="button"
               size="base"
-              className={`px-2 py-3 2xl:py-4 text-sm xlg:text-base font-medium ${
-                activeIndex === index
-                  ? "opacity-100"
-                  : "opacity-30 hover:opacity-100"
-              }`}
+              className={`px-2 py-3 2xl:py-4 text-sm xlg:text-base font-medium  ${activeIndex === index
+                ? "opacity-100 "
+                : "opacity-30 hover:opacity-100"
+                }`}
             />
           ))}
         </div>
@@ -98,8 +97,8 @@ export default function Domains() {
                         key={idx}
                         className="flex items-start gap-3  custom-text-18 text-black md:text-white"
                       >
-                        <span className="inline-block w-2 h-2 lg:w-2 lg:h-2 bg-skyBlue   mt-2 flex-shrink-0"></span>
-                        <span>{point}</span>
+                        <span className="inline-block  w-2 h-2 lg:w-2 lg:h-2 bg-skyBlue   mt-2 flex-shrink-0"></span>
+                        <span className="font-medium">{point}</span>
                       </li>
                     ))}
                   </ul>

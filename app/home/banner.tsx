@@ -11,22 +11,22 @@ export const Banner = () => {
           alt="Mirach Aerospace Banner"
           fill
           className="object-cover mask-b-from-95%"
-          priority 
+          priority
           quality={100}
         />
       </div>
 
-      <div className=" z-10   absolute bottom-8 md:bottom-30  w-container text-center text-[#363636] flex flex-col items-center   ">
-        <AnimateText>
-        <h1 className="custom-text-64 font-medium  font-neue-montreal animate-fade-up-slow ">
-          Airborne innovation with precision
-        </h1>
+      <div className=" z-10   absolute bottom-8 md:bottom-30  w-container text-center   flex flex-col items-center   ">
+        <AnimateText finalColor="#ffffff" intialColor="#d0d0d1">
+          <h1 className="custom-text-64 font-medium  font-neue-montreal animate-fade-up-slow ">
+            Airborne innovation with precision
+          </h1>
         </AnimateText>
-        <AnimateText>
-        <p className="custom-text-24 font-normal mt-2 md:mt-4  max-w-lg text-[#363636] animate-fade-up-slower">
-          Giving wings to autonomous unmanned aerial mobility with purpose and
-          excellence
-        </p>
+        <AnimateText finalColor="#d0d0d1" intialColor="#363636">
+          <p className="custom-text-24 font-normal mt-2 md:mt-4  max-w-lg    animate-fade-up-slower">
+            Giving wings to autonomous unmanned aerial mobility with purpose and
+            excellence
+          </p>
         </AnimateText>
       </div>
     </section>
