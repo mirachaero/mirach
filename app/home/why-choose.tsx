@@ -120,7 +120,7 @@ export default function WhyChooseMirach() {
   })
 
   return (
-    <section className="overflow-hidden why-choose-section">
+    <section id="why-choose-us" className="overflow-hidden why-choose-section">
       <div className="w-container relative">
         <div className="why-choose-bg absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.9)_0%,rgba(238,238,238,1)_90%)] scale-125 z-0">
           {" "}
@@ -169,7 +169,7 @@ export default function WhyChooseMirach() {
 
 const Card = ({ data }: { data: profileProps }) => {
   return (
-    <div className="">
+    <div>
       <div className="p-4   border border-skyBlue">
         <div className="h-80  lg:h-96 xl:h-64 xlg:h-72 2xl:h-80 relative">
           <Image
