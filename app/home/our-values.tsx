@@ -11,7 +11,11 @@ export default function OurValues() {
         <div className="">
           <AnimateText onscroll={true}>
             <h2 className="custom-text-48 text-white md:max-w-3xl xl:max-w-[60vw] 2xl:max-w-[50vw]   font-medium">
-              From concept to build, we create <span className="text-skyBlue">  Unmannedz</span>  <span className="text-skyBlue"> Aerial </span>  <span className="text-skyBlue">  Systems </span>  <span className="text-skyBlue"> (UAS) </span>  that deliver
+              From concept to build, we create{" "}
+              <span className="text-skyBlue"> Unmanned</span>{" "}
+              <span className="text-skyBlue"> Aerial </span>{" "}
+              <span className="text-skyBlue"> Systems </span>{" "}
+              <span className="text-skyBlue"> (UAS) </span> that deliver
             </h2>
           </AnimateText>
         </div>

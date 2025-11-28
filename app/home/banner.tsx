@@ -16,14 +16,14 @@ export const Banner = () => {
         />
       </div>
 
-      <div className=" z-10   absolute bottom-8 md:bottom-30  w-container text-center   flex flex-col items-center   ">
+      <div className=" z-10   absolute bottom-8 lg:bottom-14 xlg:bottom-20 2xl::bottom-30  w-container text-center   flex flex-col items-center   ">
         <AnimateText finalColor="#ffffff" intialColor="#d0d0d1">
-          <h1 className="custom-text-64 font-medium  font-neue-montreal animate-fade-up-slow ">
+          <h1 className="custom-text-64 font-medium text-lightGray font-neue-montreal   ">
             Airborne innovation with precision
           </h1>
         </AnimateText>
         <AnimateText finalColor="#d0d0d1" intialColor="#363636">
-          <p className="custom-text-24 font-normal mt-2 md:mt-4  max-w-lg    animate-fade-up-slower">
+          <p className="custom-text-24 font-normal mt-2 md:mt-4 text-[#363636] max-w-lg">
             Giving wings to autonomous unmanned aerial mobility with purpose and
             excellence
           </p>

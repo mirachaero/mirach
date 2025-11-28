@@ -7,6 +7,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { CloudCog } from "lucide-react";
+import AnimateText from "@/src/components/molecules/AnimateText";
 
 type ProductsData = {
   status: "available" | "coming soon";
@@ -159,6 +160,7 @@ export default function Products() {
           <h2 className="custom-text-48 font-medium text-white text-center">
             Products
           </h2>
+
           <p className="custom-text-24 text-lightGray text-center mt-2 lg:mt-4">
             Engineered for performance and reliability
           </p>

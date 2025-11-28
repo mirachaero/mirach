@@ -127,7 +127,12 @@ export const Footer = () => {
           </div>
 
           {/* Brand Name */}
-          <AnimateText onscroll>
+          <AnimateText
+            onscroll
+            intialColor="#2a2b7d"
+            finalColor="#9E9FBF"
+            endIn="150"
+          >
             <h3 className="text-[35px] md:text-[60px] lg:text-[80px] xl:text-[100px] xlg:text-[116px] font-medium text-[#9E9FBF]/80  ">
               MIRACH AEROSPACE
             </h3>

@@ -10,6 +10,7 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Button } from "@/src/components/atoms/button";
+import AnimateText from "@/src/components/molecules/AnimateText";
 
 export default function Domains() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -24,11 +25,13 @@ export default function Domains() {
     <section className="bg-white overflow-hidden">
       <div className="w-container blade-top-padding blade-bottom-padding">
         <div className="mb-8 md:mb-12">
-          <h2 className="text-blue custom-text-48 font-medium text-center">
-            Bringing designed and{" "}
-            <span className="text-skyBlue">Made-in-India</span>
-            <br /> drone intelligence to every domain
-          </h2>
+          <AnimateText onscroll finalColor="#2a2b7d" intialColor="#d0d0d1">
+            <h2 className="  custom-text-48 font-medium text-center">
+              Bringing designed and{" "}
+              <span className="text-skyBlue">Made-in-India</span>
+              <br /> drone intelligence to every domain
+            </h2>
+          </AnimateText>
         </div>
 
         {/* Tabs - visible only on md (768px) and above */}
