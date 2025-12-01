@@ -129,7 +129,7 @@ export default function WhyChooseMirach() {
 
 const Card = ({ data }: { data: profileProps }) => {
   return (
-    <div className="">
+    <div>
       <div className="p-4   border border-skyBlue">
         <div className="h-80  lg:h-96 xl:h-64 xlg:h-72 2xl:h-80 relative">
           <Image

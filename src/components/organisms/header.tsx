@@ -5,6 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/src/components/atoms/button";
 import { cn } from "@/src/utils/cn";
+import gsap from 'gsap';
+
+
+
+
 
 const navLinks = [
   { name: "About us", href: "#about-us" },
@@ -18,6 +23,8 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,8 +72,11 @@ export const Header = () => {
   };
 
   const closeMobileMenu = () => {
+
     setMobileMenuOpen(false);
   };
+
+
 
   return (
     <>
@@ -188,6 +198,7 @@ export const Header = () => {
                   key={link.name}
                   href={link.href}
                   onClick={closeMobileMenu}
+
                   className={cn(
                     "text-white text-2xl sm:text-3xl font-medium text-center tracking-wide py-4 border-b border-white/10 hover:text-skyBlue hover:pl-4 transition-all duration-300",
                     mobileMenuOpen

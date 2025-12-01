@@ -12,7 +12,8 @@ export default function CreateChange() {
 
           <div className="absolute top-0 right-0 w-[600px] h-[100px] md:h-[350px] xl:h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(37,130,254,0.9),transparent_80%)] opacity-90 z-0"></div>
 
-          <div className="relative z-20 h-full flex flex-col  xl:flex-row gap-4 lg:gap-8  py-8 p-6 md:p-8 xl:p-12 xlg:p-18">
+
+          <div className="relative z-20 h-full flex flex-col xl:flex-row gap-4 lg:gap-8  py-8 p-6 md:p-8 xl:p-12 xlg:p-18">
             <div className="w-full md:w-[70%]">
               <AnimateText onscroll finalColor="#fff" intialColor="#656565">
                 <h2 className="text-white font-medium custom-text-48 mb-4 xl:mb-8">
@@ -74,6 +75,7 @@ export default function CreateChange() {
               />
             </div>
           </div>
+
         </div>
       </div>
     </section>
