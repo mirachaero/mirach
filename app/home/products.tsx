@@ -154,7 +154,7 @@ export default function Products() {
   };
 
   return (
-    <section className="bg-[url(/assets/home/products/background.jpg)] bg-cover bg-center bg-no-repeat ">
+    <section id="products" className="bg-[url(/assets/home/products/background.jpg)] bg-cover bg-center bg-no-repeat ">
       <div className=" relative blade-top-padding blade-bottom-padding">
         <div className="w-container ">
           <h2 className="custom-text-48 font-medium text-white text-center">

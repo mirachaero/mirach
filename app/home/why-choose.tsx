@@ -3,6 +3,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AnimateText from "@/src/components/molecules/AnimateText";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,58 +37,9 @@ export default function WhyChooseMirach() {
 
   useGSAP(() => {
 
-    // Animate heading with powerful slide and fade effect
-    gsap.from(".why-choose-heading", {
-      y: 80,
-      opacity: 0,
-      duration: 1,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: ".why-choose-heading",
-        start: "top 85%",
-        toggleActions: "play none none reverse"
-      }
-    });
-
-    // Animate paragraphs with stagger
-    gsap.from(".why-choose-text p", {
-      y: 60,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: ".why-choose-text",
-        start: "top 80%",
-        toggleActions: "play none none reverse"
-      }
-    });
-
-    // Strong attractive animation for left content container with 3D effect
-    gsap.from(".why-choose-left", {
-      x: -100,
-      rotationY: -15,
-      opacity: 0,
-      duration: 1.2,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: ".why-choose-left",
-        start: "top 75%",
-        toggleActions: "play none none reverse"
-      }
-    });
-
-    // Parallax effect on scroll for left content
-    gsap.to(".why-choose-left", {
-      y: -30,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".why-choose-section",
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 1
-      }
-    });
+ 
+    
+  
 
     // Animate profile cards with powerful entrance
     gsap.from(".profile-card", {
@@ -120,7 +72,7 @@ export default function WhyChooseMirach() {
   })
 
   return (
-    <section className="overflow-hidden why-choose-section">
+    <section id="why-choose-us" className="overflow-hidden why-choose-section">
       <div className="w-container relative">
         <div className="why-choose-bg absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.9)_0%,rgba(238,238,238,1)_90%)] scale-125 z-0">
           {" "}
@@ -128,11 +80,15 @@ export default function WhyChooseMirach() {
 
         <div className="relative z-10 flex flex-col xl:flex-row gap-6">
           <div className="why-choose-left w-full xl:w-1/2 blade-top-padding-lg" style={{ perspective: "1000px" }}>
-            <h3 className="why-choose-heading text-blue font-medium custom-text-48">
+          <AnimateText onscroll finalColor="#2a2b7d" intialColor="#656565">
+
+            <h3 className="  text-blue font-medium custom-text-48">
               Why choose <b className="text-skyBlue font-normal">Mirach</b>
             </h3>
+          </AnimateText>
 
-            <div className="why-choose-text w-full lg:max-w-3xl xl:max-w-xl custom-text-24 text-darkGray">
+            <div className="  w-full lg:max-w-3xl xl:max-w-xl custom-text-24 text-darkGray">
+              <AnimateText onscroll finalColor="#656565" intialColor="#d0d0d1">
               <p className="py-4 lg:py-6">
                 With a combined experience of over two decades in
                 <span className="text-black">
@@ -142,11 +98,15 @@ export default function WhyChooseMirach() {
                 </span>
                 Mirach Aerospace empowers clients with scale and reliability.
               </p>
+                </AnimateText>
+                 <AnimateText onscroll finalColor="#656565" intialColor="#d0d0d1">
+
               <p>
                 It's a mix of seasoned professionals and young drone
                 enthusiasts, collaborating to deliver reliable, cutting-edge
                 performance across all applications.
               </p>
+                 </AnimateText>
             </div>
           </div>
 

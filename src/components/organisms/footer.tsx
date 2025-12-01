@@ -1,9 +1,7 @@
-
-
 import Image from "next/image";
 import { Button } from "@/src/components/atoms/button";
 import Link from "next/link";
-
+import AnimateText from "../molecules/AnimateText";
 
 const footerLinks = [
   { name: "Invest", href: "#invest" },
@@ -14,19 +12,16 @@ const footerLinks = [
 ];
 
 export const Footer = () => {
-
-
   return (
     <footer className="relative bg-gray blade-top-padding-lg">
       <div className="w-container">
-
         <div className="text-center">
-          <h2
-            className="custom-text-48 text-blue font-medium "
-          >
+           <AnimateText finalColor="#2a2b7d" intialColor="#9E9FBF">
+          <h2 className="custom-text-48 text-blue font-medium ">
             Partner with Mirach Aerospace <br /> shape the future of unmanned
             aerial missions.
           </h2>
+           </AnimateText>
 
           <div className="grid md:flex flex-wrap justify-center xl:grid grid-cols-2 md:grid-cols-5 text-nowrap gap-3 md:gap-4 lg:gap-6 mt-8 md:mt-10 ">
             {footerLinks.map((link, idx) => (
@@ -37,19 +32,16 @@ export const Footer = () => {
                 size="large"
                 link={link.href}
                 role="link"
-                className={` text-black border-white xl:text-lg font-medium   xl:w-full xl:py-4 2xl:py-6 ${idx === 4 ? "col-span-2" : ""
-                  } md:col-span-1`}
+                className={` text-black border-white xl:text-lg font-medium   xl:w-full xl:py-4 2xl:py-6 ${
+                  idx === 4 ? "col-span-2" : ""
+                } md:col-span-1`}
               />
             ))}
           </div>
         </div>
 
-
         <div className="flex flex-col items-center justify-center leading-none  border-b-3 border-white pb-4 md:b-6 mb-10">
-
-          <div
-            className="relative w-30 h-30 md:w-40 md:h-40 py-25 md:py-30 "
-          >
+          <div className="relative w-30 h-30 md:w-40 md:h-40 py-25 md:py-30 ">
             <Image
               src="/mirach-aerospace-footer.png"
               alt="Mirach Aerospace Logo"
@@ -58,32 +50,15 @@ export const Footer = () => {
             />
           </div>
 
-<<<<<<< HEAD
-
-
-          <h3 className="text-[35px] md:text-[60px] lg:text-[80px] xl:text-[100px] xlg:text-[116px] font-medium text-[#9E9FBF]/80  ">
-            MIRACH AEROSPACE
-          </h3>
-
-=======
           {/* Brand Name */}
-          <AnimateText
-            onscroll
-            intialColor="#2a2b7d"
-            finalColor="#9E9FBF"
-            endIn="150"
-          >
+          <AnimateText intialColor="#2a2b7d" finalColor="#9E9FBF">
             <h3 className="text-[35px] md:text-[60px] lg:text-[80px] xl:text-[100px] xlg:text-[116px] font-medium text-[#9E9FBF]/80  ">
               MIRACH AEROSPACE
             </h3>
           </AnimateText>
->>>>>>> 88fa8ff485d3d1307db3672339b36bad39a59718
         </div>
 
-
-        <div
-          className="flex items-center justify-center gap-4 pb-10 md:pb-12"
-        >
+        <div className="flex items-center justify-center gap-4 pb-10 md:pb-12">
           <Link href="#" target="_blank">
             <div className="border-1 border-blue rounded-md p-2.5 hover:scale-105 transition-transform duration-300">
               <svg

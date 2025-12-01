@@ -80,8 +80,17 @@ export default function AnimateText({
           },
           "<"
         );
-      } else {
-        gsap.to(splitRef.current.chars, {
+      } else { 
+
+        const tl = gsap.timeline({
+          scrollTrigger:{
+             trigger: containerRef.current,
+             start: "top 90%",
+          },
+           
+        });
+
+        tl.to(splitRef.current.chars, {
           color: "#6da7ff",
           duration: 0.25,
           ease: "power1.out",
@@ -89,9 +98,9 @@ export default function AnimateText({
             each: 0.03,
             from: "start",
           },
-        });
+        },"<");
 
-        gsap.to(splitRef.current.chars, {
+        tl.to(splitRef.current.chars, {
           color: finalColor,
           duration: 0.25,
           ease: "power1.out",
@@ -100,7 +109,7 @@ export default function AnimateText({
             each: 0.04,
             from: "start",
           },
-        });
+        },"<");
       }
     };
 

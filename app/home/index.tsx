@@ -5,12 +5,17 @@ import WhyChooseMirach from "./why-choose";
 import Domains from "./domains";
 import Products from "./products";
 import VtolLogistics from "./vtol-logistic";
+import Test from "./test";
 
 export default function HomePage() {
   return (
-    <main className="home-page-wapper">
+    <main> 
+    {/* <Test/> */}
       <Banner />
+      <div className="home-page-wapper">
+        
       <OurValues />
+      </div>
       <Domains />
       <Products />
       <VtolLogistics />

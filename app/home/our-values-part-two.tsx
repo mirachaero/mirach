@@ -613,13 +613,13 @@ export default function OurValuesPartTwo() {
                 />
               </g>
             </svg>
-            <div className="absolute left-[50.3%] top-[48.2%] bg-blue aspect-square w-[14.3%] rounded-full -translate-x-1/2 flex items-center justify-center -translate-y-1/2 text-white custom-text-28 text-lg xl:text-[28px] font-medium">
+            <div className="absolute left-[50.3%] top-[48.2%] bg-[url(/assets/home/our-values/ellipse-bg.png)] bg-cover bg-no-repeat aspect-square w-[14.3%] rounded-full -translate-x-1/2 flex items-center justify-center -translate-y-1/2 text-white custom-text-28 text-lg xl:text-[28px] font-medium">
               Our values
             </div>
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-x-10 gap-y-6 md:gap-y-10 lg:gap-y-40  xlg:gap-y-60   relative z-10 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-x-10 gap-y-6 md:gap-y-10 lg:gap-y-20  xlg:gap-y-36  2xl:gap-y-50   relative z-10 ">
             {values.map((value, index) => (
               <div
                 key={value.id}
@@ -633,7 +633,7 @@ export default function OurValuesPartTwo() {
                     "linear-gradient(249deg, rgba(255, 255, 255, 0.03) 39.75%, rgba(255, 255, 255, 0.18) 97.22%)",
                   backdropFilter: "blur(163.5093231201172px)",
                 }}
-                className={`relative  bg-white/5 backdrop-blur-sm border border-white/30 p-4 md:p-6  max-w-[400px] xlg:max-w-[460px] mx-auto lg:mx-0 
+                className={`relative  bg-white/5 backdrop-blur-sm border border-white/30 p-4 xlg:p-6  max-w-[400px] xlg:max-w-[460px] mx-auto lg:mx-0 
                   ${index % 2 === 0
                     ? " justify-self-start "
                     : " justify-self-end "
@@ -642,7 +642,7 @@ export default function OurValuesPartTwo() {
                 `}
               >
                 <div className="flex justify-between items-start mb-10 lg:mb-4">
-                  <div className="relative w-12 h-12 xl:w-14 xl:h-14 xlg:w-20 xlg:h-20 ">
+                  <div className="relative w-12 h-12 xl:w-20 xl:h-16 xlg:w-25 xlg:h-25 ">
                     <Image
                       src={value.icon}
                       alt={value.title}
@@ -652,10 +652,10 @@ export default function OurValuesPartTwo() {
                   </div>
                   <span className="text-lightGray font-medium text-lg">/{value.id}</span>
                 </div>
-                <h4 className="text-skyBlue custom-text-28 mb-2 md:mb-3 font-medium">
+                <h4 className="text-skyBlue custom-text-28 mb-1 xlg:mb-3 font-medium">
                   {value.title}
                 </h4>
-                <p className="text-lightGray text-base xl:text-lg font-normal  pr-6 xl:pr-10">
+                <p className="text-lightGray text-base xl:text-lg font-normal  pr-6 xlg:pr-10">
                   {value.description}
                 </p>
               </div>

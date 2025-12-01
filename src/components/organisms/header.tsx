@@ -7,24 +7,46 @@ import { Button } from "@/src/components/atoms/button";
 import { cn } from "@/src/utils/cn";
 
 const navLinks = [
-  { name: "About us", href: "/about-us" },
-  { name: "Applications", href: "/applications" },
-  { name: "Products", href: "/products" },
-  { name: "Why choose us", href: "/why-choose-us" },
+  { name: "About us", href: "#about-us" },
+  { name: "Applications", href: "#applications" },
+  { name: "Products", href: "#products" },
+  { name: "Why choose us", href: "#why-choose-us" },
 ];
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+
+      // Update scrolled state
+      setScrolled(currentScrollY > 50);
+
+      // Only apply hide/show logic for desktop (lg and above)
+      // Check if screen width is >= 1024px (lg breakpoint)
+      if (window.innerWidth >= 1024) {
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          // Scrolling down & past threshold
+          setIsVisible(false);
+        } else if (currentScrollY < lastScrollY) {
+          // Scrolling up
+          setIsVisible(true);
+        }
+      } else {
+        // Always visible on mobile/tablet
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -53,13 +75,16 @@ export const Header = () => {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full",
           scrolled
             ? "bg-black/30 backdrop-blur-3xl py-2 2xl:py-4"
-            : "bg-transparent py-3 2xl:py-4"
+            : "bg-transparent py-3 2xl:py-4",
+          // Hide/show on scroll for desktop only
+          !isVisible && "lg:-translate-y-full"
         )}
       >
         <div className="w-container flex items-center justify-between">
           {/* Logo */}
           <Link
-            href="/"
+            href="/" 
+            onClick={closeMobileMenu}
             className={cn(
               "relative transition-all duration-300",
               scrolled

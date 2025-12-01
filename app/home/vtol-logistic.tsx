@@ -1,4 +1,5 @@
 import { Button } from '@/src/components/atoms/button'
+import AnimateText from '@/src/components/molecules/AnimateText'
 import Image from 'next/image'
 
 export default function VtolLogistics() {
@@ -13,7 +14,10 @@ export default function VtolLogistics() {
                     </div>
                     <div className="relative  md:absolute p-6 md:left-14 lg:left-20 md:top-1/2 md:-translate-y-1/2 space-y-2 md:space-y-3 lg:space-y-6">
                         <h2  className="bg-lightGray/50 text-white w-fit px-3 font-medium py-1 custom-text-16">COMING SOON</h2>
+                          <AnimateText onscroll finalColor="#fff" intialColor="#656565">
+
                         <h4 className="custom-text-48 text-white font-medium py-4 2xl:py-0">VTOL logistics and <br /> UAM – Eagleray</h4>
+                          </AnimateText>
                         <Button
                             text="Notify me"
                             theme="blue"
