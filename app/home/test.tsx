@@ -1,10 +1,11 @@
-"use client"
+"use client";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import Image from "next/image";
+import AnimateText from "@/src/components/molecules/AnimateText";
 
-import { useEffect, useRef } from "react"
-import gsap from "gsap"
-
-export default function Test() {
-  const gridRef = useRef<HTMLDivElement>(null)
+export const Banner = () => {
+   const gridRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!gridRef.current) return
@@ -17,8 +18,22 @@ export default function Test() {
     // Create grid squares
     for (let y = 0; y < rows; y++) {
       for (let x = 0; x < cols; x++) {
-        const square = document.createElement("div")
-        square.className = "absolute border-[1px] border-[#6da7ff] bg-[#6da7ff]/5"
+        const square = document.createElement("span")
+        square.className = "block absolute border-b-[1px] border-l-[1px] border-[#fff]/5 border-dashed bg-transparent absolute before:absolute before:-left-[1px] before:-top-[1px] before:w-1 before:h-1   before:border-t-[#fff]/10 before:border-t before:border-l-[#fff]/10 before:border-l  after:absolute after:-bottom-[1px] after:-right-[1px] after:w-1 after:h-1   after:border-b-[#fff]/10 after:border-b after:border-r-[#fff]/10 after:border-r "
+        square.style.width = gridSize + "px"
+        square.style.height = gridSize + "px"
+        square.style.left = x * gridSize + "px"
+        square.style.top = y * gridSize + "px"
+        square.style.opacity = "1"
+        gridRef.current.appendChild(square)
+        // squares.push({ element: square, x, y })
+      }
+    } 
+
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < cols; x++) {
+        const square = document.createElement("span")
+        square.className = "block absolute border-b-[1px] border-l-[1px] border-dashed  border-[#fff]/80  "
         square.style.width = gridSize + "px"
         square.style.height = gridSize + "px"
         square.style.left = x * gridSize + "px"
@@ -60,26 +75,51 @@ export default function Test() {
   }, [])
 
   return (
-    <main className="h-screen w-full   overflow-hidden flex items-center justify-center relative bg-[url('/assets/home/banner/mirach-banner-image.png')] bg-cover">
-      {/* Dark background */}
-      <div className="absolute inset-0 b " />
-
-      {/* Grid container */}
-      <div
+    <section className="relative  w-full md:h-screen min-h-[500px] max-h-[1024px] flex items-center justify-center overflow-hidden">
+     
+       <div
         ref={gridRef}
-        className="absolute inset-0"
+        className="absolute inset-0 z-1"
         style={{
           perspective: "1000px",
         }}
       />
 
-      {/* Text content on top */}
-        <div className="relative z-10 text-center">
-        <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-lg">GSAP Grid Animation</h1>
-        <p className="text-lg md:text-xl text-gray-200 mt-4">
-          Grid lines sweeping diagonally from top-left to bottom-right
-        </p>
-      </div>  
-    </main>
-  )
-}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/assets/home/banner/background.png"
+          alt="Mirach Aerospace Banner"
+          fill
+          className="object-cover mask-b-from-95%"
+          priority
+          quality={100}
+        />
+         
+      </div>
+      <div className="absolute inset-0 z-2">
+        <Image
+          src="/assets/home/banner/drone.png"
+          alt="Mirach Aerospace Banner"
+          fill
+          className="object-cover mask-b-from-95%"
+          priority
+          quality={100}
+        />
+      </div>
+    
+      <div className=" z-3  absolute bottom-8 lg:bottom-14 xlg:bottom-20 2xl::bottom-30  w-container text-center   flex flex-col items-center   ">
+        <AnimateText finalColor="#ffffff" intialColor="#d0d0d1">
+          <h1 className="custom-text-64 font-medium text-lightGray font-neue-montreal   ">
+            Airborne innovation with precision
+          </h1>
+        </AnimateText>
+        <AnimateText finalColor="#d0d0d1" intialColor="#363636">
+          <p className="custom-text-24 font-normal mt-2 md:mt-4 text-[#363636] max-w-lg">
+            Giving wings to autonomous unmanned aerial mobility with purpose and
+            excellence
+          </p>
+        </AnimateText>
+      </div>
+    </section>
+  );
+};

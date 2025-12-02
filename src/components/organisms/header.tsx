@@ -112,7 +112,7 @@ export const Header = () => {
           </Link>
 
           {/* Navigation - Desktop */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-x-14">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -129,8 +129,9 @@ export const Header = () => {
             <Button
               text="Join us"
               theme="blue"
-              size="large"
-              link="#join-us"
+              size="large" 
+              target="_blank"
+              link="mailto:info@mirachaerospace.com"
               role="link"
               className="lg:px-12 xlg:py-3.5"
             />
@@ -231,7 +232,7 @@ export const Header = () => {
                 text="Join us"
                 theme="blue"
                 size="large"
-                link="#join-us"
+                link="mailto:info@mirachaerospace.com"
                 role="link"
                 className="w-full justify-center py-4 text-xl shadow-lg shadow-skyBlue/20 hover:shadow-skyBlue/40"
                 onClick={closeMobileMenu}

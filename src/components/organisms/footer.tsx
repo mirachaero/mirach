@@ -4,11 +4,11 @@ import Link from "next/link";
 import AnimateText from "../molecules/AnimateText";
 
 const footerLinks = [
-  { name: "Invest", href: "#invest" },
-  { name: "CSR collaborations", href: "#csr" },
-  { name: "Donate", href: "#donate" },
-  { name: "Careers", href: "#careers" },
-  { name: "Skill-based contributions", href: "#skills" },
+  { name: "Invest", href: "mailto:info@mirachaerospace.com" },
+  // { name: "CSR collaborations", href: "mailto:info@mirachaerospace.com" },
+  // { name: "Donate", href: "mailto:info@mirachaerospace.com" },
+  { name: "Careers", href: "mailto:info@mirachaerospace.com" },
+  // { name: "Skill-based contributions", href: "mailto:info@mirachaerospace.com" },
 ];
 
 export const Footer = () => {
@@ -23,7 +23,8 @@ export const Footer = () => {
           </h2>
            </AnimateText>
 
-          <div className="grid md:flex flex-wrap justify-center xl:grid grid-cols-2 md:grid-cols-5 text-nowrap gap-3 md:gap-4 lg:gap-6 mt-8 md:mt-10 ">
+          {/* <div className="grid md:flex flex-wrap justify-center xl:grid grid-cols-2 md:grid-cols-5 text-nowrap gap-3 md:gap-4 lg:gap-6 mt-8 md:mt-10 "> */}
+          <div className="grid grid-cols-2 max-w-2xl  mx-auto text-nowrap gap-3 md:gap-4 lg:gap-6 mt-8 md:mt-10 ">
             {footerLinks.map((link, idx) => (
               <Button
                 key={link.name}

@@ -5,8 +5,7 @@ import WhyChooseMirach from "./why-choose";
 import Domains from "./domains";
 import Products from "./products";
 import VtolLogistics from "./vtol-logistic";
-import Test from "./test";
-
+ 
 export default function HomePage() {
   return (
     <main> 
@@ -21,6 +20,7 @@ export default function HomePage() {
       <VtolLogistics />
       <WhyChooseMirach />
       <CreateChange />
+     
     </main>
   );
 }

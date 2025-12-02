@@ -149,15 +149,15 @@ export default function OurValuesPartTwo() {
             cardsRef.current[1],
             {
               opacity: 0,
-              duration: 0.3,
-              x: -20,
+              duration: 0.1,
+              x: -10,
               ease: "power2.out",
             },
             {
               x: 0,
               opacity: 1,
             },
-            "-=0.35"
+            "-=0.4"
           );
           tl.to(path3, {
             drawSVG: "0% 100%",
@@ -183,25 +183,25 @@ export default function OurValuesPartTwo() {
             cardsRef.current[3],
             {
               opacity: 0,
-              duration: 0.3,
-              x: -20,
+              duration: 0.1,
+              x: -10,
               ease: "power2.out",
             },
             {
               x: 0,
               opacity: 1,
             },
-            "-=0.35"
+            "-=0.4"
           );
         }
       }
     );
   });
   return (
-    <div className="relative w-full  blade-top-padding blade-bottom-margin overflow-hidden">
+    <div className="relative w-full  blade-top-padding blade-bottom-margin overflow-hidden" >
       <div
         ref={lineRef}
-        className="lg:block hidden absolute left-1/2 -translate-x-[100%] top-0 h-[70%] w-px bg-white/30 "
+        className="lg:block hidden absolute left-1/2 -translate-x-[100%] top-0 h-[48%] xlg:h-[44.2%] w-px bg-white/30 "
       ></div>
       {/* Background Grid */}
       <div className="absolute inset-0 z-0 ">
@@ -254,7 +254,7 @@ export default function OurValuesPartTwo() {
           className="relative flex flex-col items-center justify-center  "
         >
           {/* Center Circle */}
-          <div className=" absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 w-[50%] h-[50%] lg:w-[80%] lg:h-[80%] xl:w-[90%] xl:h-[90%]  xlg:w-full xlg:h-full  hidden lg:flex items-center justify-center">
+          <div className=" absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 w-[50%] h-[50%] lg:w-[80%] lg:h-[80%] xl:w-[90%] xl:h-[90%]  2xl:w-full 2xl:h-full  hidden lg:flex items-center justify-center">
             {/* <Image
               src="/assets/home/our-values/our-values.svg"
               alt="Our Values"
@@ -642,7 +642,7 @@ export default function OurValuesPartTwo() {
                 `}
               >
                 <div className="flex justify-between items-start mb-10 lg:mb-4">
-                  <div className="relative w-12 h-12 xl:w-20 xl:h-16 xlg:w-25 xlg:h-25 ">
+                  <div className="relative w-20 h-20 xl:w-20 xl:h-16 xlg:w-25 xlg:h-25 ">
                     <Image
                       src={value.icon}
                       alt={value.title}

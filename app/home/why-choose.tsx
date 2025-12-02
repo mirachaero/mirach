@@ -34,42 +34,7 @@ const profileData: profileProps[] = [
 
 
 export default function WhyChooseMirach() {
-
-  useGSAP(() => {
-
  
-    
-  
-
-    // Animate profile cards with powerful entrance
-    gsap.from(".profile-card", {
-      scale: 0.8,
-      y: 80,
-      rotationX: -20,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: "back.out(1.4)",
-      scrollTrigger: {
-        trigger: ".profile-cards-container",
-        start: "top 80%",
-        toggleActions: "play none none reverse"
-      }
-    });
-
-
-    gsap.utils.toArray<HTMLElement>(".profile-card").forEach((card) => {
-      const tl = gsap.timeline({ paused: true });
-      tl.to(card, {
-        y: -10,
-        duration: 0.3,
-        ease: "power2.out"
-      });
-
-      card.addEventListener("mouseenter", () => tl.play());
-      card.addEventListener("mouseleave", () => tl.reverse());
-    });
-  })
 
   return (
     <section id="why-choose-us" className="overflow-hidden why-choose-section">
@@ -87,14 +52,14 @@ export default function WhyChooseMirach() {
             </h3>
           </AnimateText>
 
-            <div className="  w-full lg:max-w-3xl xl:max-w-xl custom-text-24 text-darkGray">
+            <div className="  w-full lg:max-w-3xl xl:max-w-lg 2xl:max-w-xl custom-text-24 text-darkGray">
               <AnimateText onscroll finalColor="#656565" intialColor="#d0d0d1">
               <p className="py-4 lg:py-6">
                 With a combined experience of over two decades in
-                <span className="text-black">
+                <span className="text-black font-medium">
                   {" "}
                   designing, manufacturing, and deploying UAS in Defence,
-                  government, and civil operations,
+                  government, and civil operations, {" "}
                 </span>
                 Mirach Aerospace empowers clients with scale and reliability.
               </p>
@@ -114,7 +79,7 @@ export default function WhyChooseMirach() {
             <div className="profile-cards-container grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-8 xl:gap-12 xl:mx-6 blade-bottom-margin-sm xlg:mx-10 mt-6 xl:mt-28">
               {profileData.map((ele, index) => {
                 return (
-                  <div key={index} className="profile-card" style={{ perspective: "1000px" }}>
+                  <div key={index} className="profile-card"  >
                     <Card data={ele} />
                   </div>
                 );

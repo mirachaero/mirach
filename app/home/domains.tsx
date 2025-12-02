@@ -22,11 +22,11 @@ export default function Domains() {
   };
 
   return (
-    <section id="applications" className="bg-white overflow-hidden">
+    <section id="applications" className="bg-white overflow-hidden ">
       <div className="w-container blade-top-padding blade-bottom-padding">
-        <div className="mb-8 md:mb-12">
+        <div className="mb-4 md:mb-12">
           <AnimateText onscroll finalColor="#2a2b7d" intialColor="#d0d0d1">
-            <h2 className="  custom-text-48 font-medium text-center">
+            <h2 className="  custom-text-48 font-medium 2xl:text-center">
               Bringing designed and{" "}
               <span className="text-skyBlue">Made-in-India</span>
               <br /> drone intelligence to every domain
@@ -45,7 +45,7 @@ export default function Domains() {
               role="button"
               type="button"
               size="base"
-              className={`px-2 py-3 2xl:py-4 text-sm xlg:text-base font-medium  ${activeIndex === index
+              className={`px-2 py-3 2xl:py-4 text-sm xlg:text-base hover:border-transparent font-medium  ${activeIndex === index
                 ? "opacity-100 "
                 : "opacity-30 hover:opacity-100"
                 }`}
@@ -85,6 +85,7 @@ export default function Domains() {
                     alt={domain.title}
                     fill
                     className="object-cover"
+                    quality={100}
                     priority={index === 0}
                   />
                 </div>

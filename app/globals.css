@@ -130,7 +130,7 @@
   .custom-text-24 {
     @apply text-[18px] tracking-wide leading-[1.5em]
     lg:text-[20px]     lg:tracking-[0.01em] lg:leading-[1.4em]
-    2xl:text-[24px];
+    /* 2xl:text-[24px]; */
   }
 
   .custom-text-20 {
@@ -354,4 +354,8 @@
 
 .char {
   display: inline-block;
+}
+
+.clip-path-wave {
+  clip-path: url(#myClip);
 }

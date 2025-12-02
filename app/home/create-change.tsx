@@ -3,9 +3,9 @@ import AnimateText from "@/src/components/molecules/AnimateText";
 export default function CreateChange() {
   return (
     <section className="bg-[#EEEEEE]  relative ">
-      <div className="absolute w-[2px] xl:border xl:border-white h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ms-3"></div>
+      <div className="absolute w-[2px] xl:border xl:border-white h-full top-0 left-1/2 -translate-x-1/2 ml-[13px]"></div>
       <div className="w-container lg:mx-auto  xl:border-t-2 xl:border-b-2 xl:border-white blade-top-padding-sm blade-bottom-padding-sm">
-        <div className=" relative h-auto bg-black xl:h-[28rem] 2xl:h-[33rem] overflow-hidden  ">
+        <div className=" relative h-auto bg-black   overflow-hidden  ">
           <div className="absolute inset-0 backdrop-blur-[60px] z-10"></div>
 
           <div className="absolute left-0 bottom-0 w-[600px] h-[100px] md:h-[350px] xl:h-[600px] bg-[radial-gradient(circle_at_bottom_left,rgba(37,130,254,0.9),transparent_70%)] opacity-70 z-0"></div>
@@ -33,8 +33,9 @@ export default function CreateChange() {
                   text="Join us"
                   theme="blue"
                   size="base"
-                  role="link"
-                  className="px-4 md:px-16 lg:py-3.5 font-medium xl:block hidden"
+                  role="link" 
+                  link="mailto:info@mirachaerospace.com"
+                  className="w-fit px-4 md:px-16 lg:py-3.5 font-medium xl:block hidden"
                 />
               </div>
             </div>
@@ -47,14 +48,14 @@ export default function CreateChange() {
                     commitment.
                   </p>
                 </AnimateText>
-                <AnimateText onscroll finalColor="#fff" intialColor="#656565">
+                <AnimateText onscroll finalColor="#FFFFFFCC" intialColor="#656565">
                   <p className=" text-white/90 ">
                     At Mirach Aerospace, every contribution counts. Whether you
                     are a professional, student, partner, volunteer, there is a
                     place for you here.
                   </p>
                 </AnimateText>
-                <AnimateText onscroll finalColor="#fff" intialColor="#656565">
+                <AnimateText onscroll finalColor="#FFFFFFCC" intialColor="#656565">
                   <p className=" text-white/90 ">
                     Join our mission to advance India's aerospace innovation in
                     any capacity. As an equal-opportunity organization that

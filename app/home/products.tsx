@@ -154,7 +154,7 @@ export default function Products() {
   };
 
   return (
-    <section id="products" className="bg-[url(/assets/home/products/background.jpg)] bg-cover bg-center bg-no-repeat ">
+    <section id="products" className="bg-[url(/assets/home/products/background.jpg)] bg-cover bg-center bg-no-repeat   ">
       <div className=" relative blade-top-padding blade-bottom-padding">
         <div className="w-container ">
           <h2 className="custom-text-48 font-medium text-white text-center">
@@ -226,21 +226,32 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
 
     // Animate image transition with crossfade
     const tl = gsap.timeline();
-    tl.to(currentImage, {
+    tl.fromTo(currentImage, {
+      opacity: 1,
+      // scale: 0.95,
+      x:0,
+    
+    },{  
+      x:-100,
       opacity: 0,
-      scale: 0.95,
-      duration: 0.4,
-      ease: "power2.inOut",
+          duration: 0.4,
+      ease: "power1.inOut",
     });
-    tl.to(
+    tl.fromTo(
       nextImage,
       {
-        opacity: 1,
-        scale: 1,
-        duration: 0.4,
-        ease: "power2.inOut",
+        opacity: 0,
+         x:200,
+         
       },
-      "-=0.2"
+      {
+        x:0,
+        opacity: 1, 
+        duration: 0.4,
+        ease: "power1.inOut",
+      },
+      
+      "+=0.01"
     ); // Overlap animations for smooth crossfade
 
     // Update bullet indicators
@@ -369,14 +380,14 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
     <div ref={cardRef} className="">
       <div
         ref={imageContainerRef}
-        className=" h-60 md:h-80 2xl:h-80 relative mt-2"
+        className=" h-60 md:h-70 2xl:h-70 relative mt-2 "
       >
         {/* Render all images stacked, control visibility with GSAP */}
         {product.images.map((imageSrc, idx) => (
           <Image
             key={idx}
             src={imageSrc}
-            className="object-contain  pc-image-container carousel-image absolute inset-0"
+            className="object-contain  pc-image-container carousel-image absolute inset-0 "
             fill
             unoptimized
             alt={`${product.label} - Image ${idx + 1}`}
@@ -438,7 +449,7 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
       <div className="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr]  gap-x-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-x-20 xlg:gap-x-30 mt-2">
         <div className="justify-self-center pc-left ">
           {product.title}
-          <div className="mt-8 md:block hidden  w-fit">
+          {/* <div className="mt-8 md:block hidden  w-fit">
             <Button
               text={product.ctaText}
               link={product.ctaLink}
@@ -448,7 +459,7 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
               size="large"
               className="px-8 font-medium"
             />
-          </div>
+          </div> */}
         </div>
 
         <div>
@@ -456,7 +467,7 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
             {product.features.map((feature, idx) => (
               <li
                 key={idx}
-                className=" md:border-b border-white/50 pb-1 xlg:pb-3 pr-4 md:pr-10 lg:pr-12 pc-feature"
+                className=" md:border-b   border-white/50 pb-1 xlg:pb-3 pr-4 md:pr-10 lg:pr-12 pc-feature md:h-full "
               >
                 {feature}
               </li>
