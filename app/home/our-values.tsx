@@ -6,7 +6,7 @@ import AnimateText from "@/src/components/molecules/AnimateText";
 
 export default function OurValues() {
   return (
-    <section id="about-us" className="relative overflow-hidden "> 
+    <section id="about-us" className="relative overflow-hidden"> 
  
 
       <div className="w-container blade-top-padding-lg">

@@ -22,7 +22,7 @@ export default function Domains() {
   };
 
   return (
-    <section id="applications" className="bg-white overflow-hidden ">
+    <section id="applications" className="bg-white overflow-hidden clip-path-wave-top ">
       <div className="w-container blade-top-padding blade-bottom-padding">
         <div className="mb-4 md:mb-12">
           <AnimateText onscroll finalColor="#2a2b7d" intialColor="#d0d0d1">

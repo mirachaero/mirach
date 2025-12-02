@@ -33,7 +33,9 @@ export default function CreateChange() {
                   text="Join us"
                   theme="blue"
                   size="base"
-                  role="link" 
+                  role="link"  
+                  type="button"
+                  target="_blank"
                   link="mailto:info@mirachaerospace.com"
                   className="w-fit px-4 md:px-16 lg:py-3.5 font-medium xl:block hidden"
                 />

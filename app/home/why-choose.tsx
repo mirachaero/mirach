@@ -52,7 +52,7 @@ export default function WhyChooseMirach() {
             </h3>
           </AnimateText>
 
-            <div className="  w-full lg:max-w-3xl xl:max-w-lg 2xl:max-w-xl custom-text-24 text-darkGray">
+            <div className="  w-full lg:max-w-3xl xl:max-w-lg 2xl:max-w-[520px] custom-text-24 text-darkGray">
               <AnimateText onscroll finalColor="#656565" intialColor="#d0d0d1">
               <p className="py-4 lg:py-6">
                 With a combined experience of over two decades in

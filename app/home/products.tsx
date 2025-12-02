@@ -17,10 +17,11 @@ type ProductsData = {
   images: string[];
   ctaText: string;
   ctaLink: string;
+  id:number;
 };
 
 const productsData: ProductsData[] = [
-  {
+  {  id:0,
     status: "available",
     label: "Tailsitter – Zeus Alpha",
     title: (
@@ -38,7 +39,7 @@ const productsData: ProductsData[] = [
     ctaText: "Know more",
     ctaLink: "#",
   },
-  {
+  { id:1,
     status: "available",
     label: "Loiter Munition Multicopter – Bolt",
     title: (
@@ -61,7 +62,7 @@ const productsData: ProductsData[] = [
     ctaLink: "#",
   },
 
-  {
+  { id:2,
     status: "available",
     label: "Helicopter – Bumblebee MK I",
     title: (
@@ -83,7 +84,8 @@ const productsData: ProductsData[] = [
     ctaText: "Know more",
     ctaLink: "#",
   },
-  {
+  { 
+    id:3,
     status: "available",
     label: "Fixed Wing – X777",
     title: (
@@ -103,7 +105,8 @@ const productsData: ProductsData[] = [
     ctaText: "Know more",
     ctaLink: "#",
   },
-  {
+  { 
+    id:4,
     status: "coming soon",
     label: "VTOL logistics and UAM – Eagleray",
     title: (
@@ -153,8 +156,12 @@ export default function Products() {
     handleScroll(idx);
   };
 
-  return (
-    <section id="products" className="bg-[url(/assets/home/products/background.jpg)] bg-cover bg-center bg-no-repeat   ">
+  return ( 
+ 
+
+    <div className="bg-white -mt-[1px]  ">
+
+    <section id="products" className="bg-[url(/assets/home/products/background.jpg)] bg-cover bg-center bg-no-repeat  clip-path-wave-top  ">
       <div className=" relative blade-top-padding blade-bottom-padding">
         <div className="w-container ">
           <h2 className="custom-text-48 font-medium text-white text-center">
@@ -200,6 +207,9 @@ export default function Products() {
         </div>
       </div>
     </section>
+    
+    </div>
+
   );
 }
 
@@ -381,7 +391,13 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
       <div
         ref={imageContainerRef}
         className=" h-60 md:h-70 2xl:h-70 relative mt-2 "
-      >
+      >  
+        {
+          product.id === 4 &&
+        <h3 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[45px] md:text-[60px] lg:text-[80px] xlg:text-[100px] 2xl:text-[120px]  text-nowrap font-medium text-white/10  ">
+              COMING SOON
+            </h3>
+        }
         {/* Render all images stacked, control visibility with GSAP */}
         {product.images.map((imageSrc, idx) => (
           <Image

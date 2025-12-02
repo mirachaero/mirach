@@ -107,7 +107,8 @@ export const Header = () => {
               alt="Mirach Aerospace"
               fill
               className="object-contain"
-              priority
+              priority 
+              quality={100}
             />
           </Link>
 

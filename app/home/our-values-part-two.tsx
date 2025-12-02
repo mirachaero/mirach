@@ -198,7 +198,7 @@ export default function OurValuesPartTwo() {
     );
   });
   return (
-    <div className="relative w-full  blade-top-padding blade-bottom-margin overflow-hidden" >
+    <div className="relative w-full  blade-top-padding blade-bottom-margin overflow-hidden " >
       <div
         ref={lineRef}
         className="lg:block hidden absolute left-1/2 -translate-x-[100%] top-0 h-[48%] xlg:h-[44.2%] w-px bg-white/30 "

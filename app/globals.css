@@ -359,3 +359,12 @@
 .clip-path-wave {
   clip-path: url(#myClip);
 }
+
+.clip-path-wave-top {
+  clip-path: url(#myClipTop);
+}
+ 
+.clip-path-wave-flip {
+  clip-path: url(#myClipFlip);
+}
+ 
