@@ -5,11 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/src/components/atoms/button";
 import { cn } from "@/src/utils/cn";
-import gsap from 'gsap';
-
-
-
-
+import gsap from "gsap";
 
 const navLinks = [
   { name: "About us", href: "#about-us" },
@@ -23,8 +19,6 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,11 +66,8 @@ export const Header = () => {
   };
 
   const closeMobileMenu = () => {
-
     setMobileMenuOpen(false);
   };
-
-
 
   return (
     <>
@@ -93,7 +84,7 @@ export const Header = () => {
         <div className="w-container flex items-center justify-between">
           {/* Logo */}
           <Link
-            href="/" 
+            href="/"
             onClick={closeMobileMenu}
             className={cn(
               "relative transition-all duration-300",
@@ -107,7 +98,7 @@ export const Header = () => {
               alt="Mirach Aerospace"
               fill
               className="object-contain"
-              priority 
+              priority
               quality={100}
             />
           </Link>
@@ -130,11 +121,11 @@ export const Header = () => {
             <Button
               text="Join us"
               theme="blue"
-              size="large" 
+              size="large"
               target="_blank"
               link="mailto:info@mirachaerospace.com"
               role="link"
-              className="lg:px-12 xlg:py-3.5"
+              className="lg:px-10 xlg:py-3 lg:text-lg"
             />
           </div>
 
@@ -200,7 +191,6 @@ export const Header = () => {
                   key={link.name}
                   href={link.href}
                   onClick={closeMobileMenu}
-
                   className={cn(
                     "text-white text-2xl sm:text-3xl font-medium text-center tracking-wide py-4 border-b border-white/10 hover:text-skyBlue hover:pl-4 transition-all duration-300",
                     mobileMenuOpen

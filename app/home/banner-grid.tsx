@@ -97,7 +97,8 @@ export default function BannerGrid() {
         <Image
           src="/assets/home/banner/mirach-banner.png "
           alt="Image with drone"
-          fill
+          fill 
+          unoptimized
           className="w-full h-full object-cover clip-path-wave"
         />
         {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60" /> */}

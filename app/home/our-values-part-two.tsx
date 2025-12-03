@@ -198,7 +198,7 @@ export default function OurValuesPartTwo() {
     );
   });
   return (
-    <div className="relative w-full  blade-top-padding blade-bottom-margin overflow-hidden " >
+    <div className="relative w-full  blade-top-padding blade-bottom-margin overflow-hidden ">
       <div
         ref={lineRef}
         className="lg:block hidden absolute left-1/2 -translate-x-[100%] top-0 h-[48%] xlg:h-[44.2%] w-px bg-white/30 "
@@ -227,8 +227,10 @@ export default function OurValuesPartTwo() {
                   sustainable transformation
                 </b>{" "}
                 with reliable, accessible, and{" "}
-                <b className="text-white font-medium">Made-in-India aerial systems</b>{" "}
-                 with Artificial Intelligence inbuilt.
+                <b className="text-white font-medium">
+                  Made-in-India aerial systems
+                </b>{" "}
+                with Artificial Intelligence inbuilt.
               </p>
             </AnimateText>
           </div>
@@ -619,7 +621,7 @@ export default function OurValuesPartTwo() {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-x-10 gap-y-6 md:gap-y-10 lg:gap-y-20  xlg:gap-y-36  2xl:gap-y-50   relative z-10 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-x-10 gap-y-6 md:gap-y-10 lg:gap-y-20  xlg:gap-y-30  2xl:gap-y-50   relative z-10 ">
             {values.map((value, index) => (
               <div
                 key={value.id}
@@ -634,9 +636,10 @@ export default function OurValuesPartTwo() {
                   backdropFilter: "blur(163.5093231201172px)",
                 }}
                 className={`relative  bg-white/5 backdrop-blur-sm border border-white/30 p-4 xlg:p-6  max-w-[400px] xlg:max-w-[460px] mx-auto lg:mx-0 
-                  ${index % 2 === 0
-                    ? " justify-self-start "
-                    : " justify-self-end "
+                  ${
+                    index % 2 === 0
+                      ? " justify-self-start "
+                      : " justify-self-end "
                   }
                  
                 `}
@@ -650,7 +653,9 @@ export default function OurValuesPartTwo() {
                       className="object-contain"
                     />
                   </div>
-                  <span className="text-lightGray font-medium text-lg">/{value.id}</span>
+                  <span className="text-lightGray font-medium text-lg">
+                    /{value.id}
+                  </span>
                 </div>
                 <h4 className="text-skyBlue custom-text-28 mb-1 xlg:mb-3 font-medium">
                   {value.title}
