@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mirach Aerospace
 
-## Getting Started
+> **Airborne innovation with precision**
 
-First, run the development server:
+Mirach is a cutting-edge web platform showcasing Unmanned Aerial Systems (UAS) designed and manufactured in India. From concept to build, we create drone intelligence solutions for defense, research, industrial, and environmental applications.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+🌐 **Live Demo:** [https://mirach-dev.vercel.app/](https://mirach-dev.vercel.app/)
+
+---
+
+## 🚀 About
+
+Mirach Aerospace specializes in creating advanced Unmanned Aerial Systems that deliver precision and innovation across multiple domains:
+
+- **Defence and Security** - Mission-critical aerial systems
+- **Research and Development** - Cutting-edge drone technology
+- **Composite Manufacturing** - Advanced materials and construction
+- **Industrial and Commercial Applications** - Business solutions
+- **Environmental and Scientific** - Data collection and monitoring
+- **Mission-specific Applications** - Custom-built systems
+
+---
+
+## ✨ Features
+
+- **Modern UI/UX** - Premium design with smooth animations and transitions
+- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
+- **Advanced Animations** - GSAP-powered scroll-triggered animations and interactive elements
+- **Smooth Scrolling** - Lenis integration for buttery-smooth scroll experience
+- **Component Architecture** - Atomic design pattern (atoms, molecules, organisms)
+- **Performance Optimized** - Built with Next.js 16 for optimal performance
+- **SEO Ready** - Proper meta tags and semantic HTML structure
+
+---
+
+## 🛠️ Tech Stack
+
+### Core Framework
+
+- **[Next.js 16](https://nextjs.org/)** - React framework with App Router
+- **[React 19](https://react.dev/)** - Latest React with concurrent features
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe development
+
+### Styling & UI
+
+- **[Tailwind CSS 4](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[Lucide React](https://lucide.dev/)** - Beautiful icon library
+- **[clsx](https://github.com/lukeed/clsx)** & **[tailwind-merge](https://github.com/dcastil/tailwind-merge)** - Conditional class management
+
+### Animation & Interactions
+
+- **[GSAP](https://gsap.com/)** - Professional-grade animation library
+- **[@gsap/react](https://gsap.com/react)** - React integration for GSAP
+- **[Lenis](https://lenis.studiofreight.com/)** - Smooth scroll library
+- **[Swiper](https://swiperjs.com/)** - Modern touch slider
+
+### Development Tools
+
+- **ESLint** - Code linting and quality
+- **PostCSS** - CSS transformations
+
+---
+
+## 📦 Installation
+
+### Prerequisites
+
+- Node.js 20+
+- npm
+
+### Setup
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/blacksof-dev/mirach.git
+   cd mirach
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
+
+---
+
+## 🏗️ Project Structure
+
+```
+mirach/
+├── app/                    # Next.js App Router
+│   ├── home/              # Home page sections
+│   ├── globals.css        # Global styles
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Main page
+├── src/
+│   └── components/        # React components
+│       ├── atoms/         # Basic UI elements (buttons, etc.)
+│       ├── molecules/     # Composite components
+│       └── organisms/     # Complex components (header, footer)
+├── public/                # Static assets
+└── package.json           # Dependencies and scripts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎨 Component Architecture
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project follows **Atomic Design** principles:
 
-## Learn More
+- **Atoms** - Basic building blocks (buttons, inputs)
+- **Molecules** - Simple component combinations (animated text, impact products)
+- **Organisms** - Complex, feature-rich components (header, footer)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📜 Available Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Command         | Description              |
+| --------------- | ------------------------ |
+| `npm run dev`   | Start development server |
+| `npm run build` | Build for production     |
+| `npm run start` | Start production server  |
+| `npm run lint`  | Run ESLint               |
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
