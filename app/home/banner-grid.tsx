@@ -95,7 +95,7 @@ export default function BannerGrid() {
       {/* Background Image */}
       <div ref={BgImageRef} className="absolute inset-0 z-0 md:opacity-0">
         <Image
-          src="/assets/home/banner/mirach-banner-image.png "
+          src="/assets/home/banner/mirach-banner.png "
           alt="Image with drone"
           fill
           className="w-full h-full object-cover clip-path-wave"
