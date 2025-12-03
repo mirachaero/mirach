@@ -5,13 +5,14 @@ import WhyChooseMirach from "./why-choose";
 import Domains from "./domains";
 import Products from "./products";
 import VtolLogistics from "./vtol-logistic";
-import  BannerGrid  from "./banner-grid";
+import BannerGrid from "./banner-grid";
+import { Test } from "./test";
 
 export default function HomePage() {
   return (
     <main>
-      {/* <Banner /> */}
-      <BannerGrid/>
+      <Test />
+      {/* <BannerGrid/> */}
       <div className="home-page-wapper">
         <OurValues />
       </div>
