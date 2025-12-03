@@ -4,7 +4,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import AnimateText from "@/src/components/molecules/AnimateText";
 
-export const Banner = () => {
+export const Test = () => {
    const gridRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export const Banner = () => {
     for (let y = 0; y < rows; y++) {
       for (let x = 0; x < cols; x++) {
         const square = document.createElement("span")
-        square.className = "block absolute border-b-[1px] border-l-[1px] border-dashed  border-[#fff]/80  "
+        square.className = "block absolute border-b-[1px] border-l-[1px] border-dashed  border-[#fff]/80 backdrop-blur-[100px] "
         square.style.width = gridSize + "px"
         square.style.height = gridSize + "px"
         square.style.left = x * gridSize + "px"
@@ -65,7 +65,7 @@ export const Banner = () => {
         delay + 0.5,
       )
     })
-
+    
     return () => {
       timeline.kill()
       if (gridRef.current) {

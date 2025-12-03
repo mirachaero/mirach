@@ -145,7 +145,7 @@ const DomainsData = [
   {
     title: "Industrial and Commercial Applications",
     poins: [
-      "Surveying and mapping Infrastructure inspection",
+      "Surveying and mapping infrastructure inspection",
       "Agriculture and forestry monitoring.",
       "Cargo and logistics",
     ],

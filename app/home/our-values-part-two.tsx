@@ -227,8 +227,8 @@ export default function OurValuesPartTwo() {
                   sustainable transformation
                 </b>{" "}
                 with reliable, accessible, and{" "}
-                <b className="text-white font-medium">Made-in-India aerial</b>{" "}
-                systems with Artificial Intelligence inbuilt.
+                <b className="text-white font-medium">Made-in-India aerial systems</b>{" "}
+                 with Artificial Intelligence inbuilt.
               </p>
             </AnimateText>
           </div>
@@ -241,7 +241,7 @@ export default function OurValuesPartTwo() {
                 To engineer innovative, mission-ready drone solutions that
                 deliver reliability where it matters through{" "}
                 <b className="text-white font-medium">precision</b> and{" "}
-                <b className="text-white font-medium">actionable</b>
+                <b className="text-white font-medium">actionable</b>{" "}
                 <b className="text-white font-medium">intelligence</b>.
               </p>
             </AnimateText>

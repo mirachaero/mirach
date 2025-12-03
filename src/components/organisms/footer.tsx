@@ -18,7 +18,7 @@ export const Footer = () => {
         <div className="text-center">
            <AnimateText finalColor="#2a2b7d" intialColor="#9E9FBF">
           <h2 className="custom-text-48 text-blue font-medium ">
-            Partner with Mirach Aerospace <br /> shape the future of unmanned
+            Partner with Mirach Aerospace <br /> to shape the future of unmanned
             aerial missions.
           </h2>
            </AnimateText>

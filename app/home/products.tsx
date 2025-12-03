@@ -55,7 +55,7 @@ const productsData: ProductsData[] = [
       "Target destruction: Air-to-air and Air-to-ground",
       "FPV feed: Analog",
       "Surveillance with EO/IR camera: Target detection up to 1 km",
-      "Features: Live FPV feed, GPS free navigation, Reconnaissance with target locking",
+      "Use case: Live FPV feed, GPS-free navigation, Reconnaissance with target locking",
     ],
     images: ["/assets/home/products/loiter-munition-multicopter–bolt.png"],
     ctaText: "Know more",
@@ -120,7 +120,7 @@ const productsData: ProductsData[] = [
       "Altitude serviceable (AMSL): 4,000 m",
       "Range: 60 km",
       "Flight time: <120 min, extended up to 240 min with payload replaceable batteries",
-      "Features: Live FPV feed, GPS free navigation, Reconnaissance with target locking",
+      "Use case: Live FPV feed, GPS-free navigation, Reconnaissance with target locking",
     ],
     images: [
       "/assets/home/products/VTOL-logistics-and-UAM–eagleray-v1.png",

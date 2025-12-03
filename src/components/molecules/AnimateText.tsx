@@ -14,12 +14,14 @@ export default function AnimateText({
   intialColor = "#363636",
   finalColor = "#d0d0d1",
   endIn = "300",
+  delay=0,
 }: {
   onscroll?: boolean;
   children: ReactNode;
   intialColor?: string;
   finalColor?: string;
   endIn?: string;
+  delay?:number;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const splitRef = useRef<SplitText | null>(null);
@@ -85,12 +87,13 @@ export default function AnimateText({
         const tl = gsap.timeline({
           scrollTrigger:{
              trigger: containerRef.current,
-             start: "top 90%",
+             start: "top 99%",
           },
            
         });
 
         tl.to(splitRef.current.chars, {
+          delay:delay,
           color: "#6da7ff",
           duration: 0.25,
           ease: "power1.out",
