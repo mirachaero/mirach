@@ -6,9 +6,7 @@ import AnimateText from "@/src/components/molecules/AnimateText";
 
 export default function OurValues() {
   return (
-    <section id="about-us" className="relative overflow-hidden"> 
- 
-
+    <section id="about-us" className="relative overflow-hidden ">
       <div className="w-container blade-top-padding-lg">
         <div className="">
           <AnimateText onscroll={true}>
@@ -76,7 +74,7 @@ export default function OurValues() {
                 <Button
                   text="Join us"
                   theme="blue"
-                  size="large" 
+                  size="large"
                   target="_blank"
                   link="mailto:info@mirachaerospace.com"
                   role="link"
@@ -97,9 +95,7 @@ export default function OurValues() {
 
       <div className="absolute inset-0 backdrop-blur-[100px] bg-black/5 -z-1"></div>
       <div className="absolute bottom-[30%] left-[85%] bg-radial from-30% to-90% from-[#3382FB]/60 to-[#3382FB]/10 rounded-full w-[30rem] h-[20rem] -z-2 scale-y-[4] scale-x-[2]"></div>
-      <div className="absolute bottom-[1%] right-[85%] bg-radial from-30% to-90% from-[#3382FB]/60 to-[#3382FB]/10 rounded-full w-[30rem] h-[20rem] -z-2 scale-y-[3] scale-x-[2]"></div>
-     
-    
+      <div className="absolute bottom-[9%] md:bottom-[1%] right-[85%] bg-radial from-30% to-90% from-[#3382FB]/60 to-[#3382FB]/10 rounded-full w-[30rem] h-[20rem] -z-2 scale-y-[2] sm:scale-y-[3] scale-x-[1.5] md:scale-x-[1.1]"></div>
     </section>
   );
 }

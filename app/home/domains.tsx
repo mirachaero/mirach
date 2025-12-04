@@ -22,7 +22,10 @@ export default function Domains() {
   };
 
   return (
-    <section id="applications" className="bg-white overflow-hidden clip-path-wave-top ">
+    <section
+      id="applications"
+      className="bg-white overflow-hidden clip-path-wave-top "
+    >
       <div className="w-container blade-top-padding blade-bottom-padding">
         <div className="mb-4 md:mb-12">
           <AnimateText onscroll finalColor="#2a2b7d" intialColor="#d0d0d1">
@@ -35,7 +38,7 @@ export default function Domains() {
         </div>
 
         {/* Tabs - visible only on md (768px) and above */}
-        <div className="hidden md:flex flex-wrap 2xl:justify-center gap-3 mb-8 2xl:mb-12">
+        <div className="hidden md:flex flex-nowrap xlg:flex-wrap   2xl:justify-center gap-3 mb-4 xlg:mb-8 2xl:mb-12">
           {DomainsData.map((domain, index) => (
             <Button
               key={index}
@@ -45,10 +48,11 @@ export default function Domains() {
               role="button"
               type="button"
               size="base"
-              className={`px-2 py-3 2xl:py-4 text-sm xlg:text-base hover:border-transparent font-medium  ${activeIndex === index
-                ? "opacity-100 "
-                : "opacity-30 hover:opacity-100"
-                }`}
+              className={`px-2 xlg:py-3 2xl:py-4 text-sm xlg:text-base   hover:border-transparent font-medium  ${
+                activeIndex === index
+                  ? "opacity-100 "
+                  : "opacity-30 hover:opacity-100"
+              }`}
             />
           ))}
         </div>
@@ -67,6 +71,12 @@ export default function Domains() {
               spaceBetween: 0,
               speed: 0,
             },
+          }}
+          pagination={{
+            el: ".applications-swiper-pagination-bullet-custom",
+            clickable: true,
+            bulletClass: "applications-pagination-bullet",
+            bulletActiveClass: "applications-pagination-bullet-active",
           }}
           grabCursor={true}
           simulateTouch={true}
@@ -111,6 +121,8 @@ export default function Domains() {
             </SwiperSlide>
           ))}
         </Swiper>
+        {/* Pagination bullets for mobile */}
+        <div className="applications-swiper-pagination-bullet-custom md:hidden flex justify-center gap-2 mt-6"></div>
       </div>
     </section>
   );

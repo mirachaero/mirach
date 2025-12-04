@@ -1,13 +1,18 @@
 "use client";
 
-import { Button } from "@/src/components/atoms/button";
 import { cn } from "@/src/utils/cn";
-import { useGSAP } from "@gsap/react";
+
 import Image from "next/image";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
-import { CloudCog } from "lucide-react";
-import AnimateText from "@/src/components/molecules/AnimateText";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperType } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 
 type ProductsData = {
   status: "available" | "coming soon";
@@ -17,13 +22,14 @@ type ProductsData = {
   images: string[];
   ctaText: string;
   ctaLink: string;
-  id:number;
+  id: number;
 };
 
 const productsData: ProductsData[] = [
-  {  id:0,
+  {
+    id: 0,
     status: "available",
-    label: "Tailsitter – Zeus Alpha",
+    label: "Tailsitter – Zeus Beta",
     title: (
       <h3 className="custom-text-48 font-medium text-lightGray/50 max-w-sm xlg:max-w-md">
         Survelliance Tailsitter - <span className="text-white">Zeus (β)</span>
@@ -39,7 +45,8 @@ const productsData: ProductsData[] = [
     ctaText: "Know more",
     ctaLink: "#",
   },
-  { id:1,
+  {
+    id: 1,
     status: "available",
     label: "Loiter Munition Multicopter – Bolt",
     title: (
@@ -62,7 +69,8 @@ const productsData: ProductsData[] = [
     ctaLink: "#",
   },
 
-  { id:2,
+  {
+    id: 2,
     status: "available",
     label: "Helicopter – Bumblebee MK I",
     title: (
@@ -84,8 +92,8 @@ const productsData: ProductsData[] = [
     ctaText: "Know more",
     ctaLink: "#",
   },
-  { 
-    id:3,
+  {
+    id: 3,
     status: "available",
     label: "Fixed Wing – X777",
     title: (
@@ -105,8 +113,8 @@ const productsData: ProductsData[] = [
     ctaText: "Know more",
     ctaLink: "#",
   },
-  { 
-    id:4,
+  {
+    id: 4,
     status: "coming soon",
     label: "VTOL logistics and UAM – Eagleray",
     title: (
@@ -120,7 +128,7 @@ const productsData: ProductsData[] = [
       "Altitude serviceable (AMSL): 4,000 m",
       "Range: 60 km",
       "Flight time: <120 min, extended up to 240 min with payload replaceable batteries",
-      "Use case: Live FPV feed, GPS-free navigation, Reconnaissance with target locking",
+      "Use case: Surveillance tailsitter UAV which can be deployed from any base of 2 x 2 metre, can detect targets up to 1 km in loitering range, supports redundancy and encrypted communication system.",
     ],
     images: [
       "/assets/home/products/VTOL-logistics-and-UAM–eagleray-v1.png",
@@ -138,6 +146,7 @@ export default function Products() {
   const [activeProductData, setActiveProductData] = useState<ProductsData>(
     productsData[activeProduct]
   );
+  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
   const handleScroll = (idx: number) => {
     const container = containerRef.current;
@@ -154,62 +163,96 @@ export default function Products() {
     setActiveProduct(idx);
     setActiveProductData(productsData[idx]);
     handleScroll(idx);
+    swiperInstance?.slideTo(idx);
   };
 
-  return ( 
- 
-
+  return (
     <div className="bg-white -mt-[1px]  ">
+      <section
+        id="products"
+        className="bg-[url(/assets/home/products/background.jpg)] bg-cover bg-center bg-no-repeat  clip-path-wave-top relative "
+      >
+        <div className=" relative blade-top-padding blade-bottom-padding">
+          <div className="w-container ">
+            <h2 className="custom-text-48 font-medium text-white text-center">
+              Products
+            </h2>
 
-    <section id="products" className="bg-[url(/assets/home/products/background.jpg)] bg-cover bg-center bg-no-repeat  clip-path-wave-top  ">
-      <div className=" relative blade-top-padding blade-bottom-padding">
-        <div className="w-container ">
-          <h2 className="custom-text-48 font-medium text-white text-center">
-            Products
-          </h2>
-
-          <p className="custom-text-24 text-lightGray text-center mt-2 lg:mt-4">
-            Engineered for performance and reliability
-          </p>
-        </div>
-        <div ref={containerRef} className="overflow-x-auto no-scrollbar px-4">
-          <div className="flex text-nowrap md:flex-wrap xl:justify-center mx-auto w-fit gap-x-4 gap-y-6 xlg:gap-x-6 mt-8 lg:mt-12 ">
-            {productsData.map((product, idx) => (
-              <button
-                onClick={() => handleProductChange(idx)}
-                key={idx}
-                ref={(el: HTMLButtonElement) => {
-                  if (tabRef.current) {
-                    tabRef.current[idx] = el;
-                  }
-                }}
-                className={cn(
-                  "relative border-white/50 border-[1px] custom-text-18 font-medium text-white/50 hover:bg-skyBlue/30 py-3 xlg:py-4 2xl:py-5 px-3 2xl:px-9 cursor-pointer transition-all  duration-300",
-                  {
-                    "border-white": activeProduct === idx,
-                    "text-white ": activeProduct === idx,
-                  }
-                )}
-              >
-                {product.label}
-                {product.status === "coming soon" && (
-                  <span className="uppercase inline-block absolute -top-2.5 right-4 bg-[#3382FB] text-white px-2 text-sm">
-                    {" "}
-                    Coming soon{" "}
-                  </span>
-                )}
-              </button>
-            ))}
+            <p className="custom-text-24 text-lightGray text-center mt-2 lg:mt-4">
+              Engineered for performance and reliability
+            </p>
           </div>
-        </div>
-        <div className="w-container ">
-          <ProductCard product={activeProductData} />
-        </div>
-      </div>
-    </section>
-    
-    </div>
+          <div ref={containerRef} className="overflow-x-auto no-scrollbar px-4">
+            <div className="flex text-nowrap md:flex-wrap xl:justify-center mx-auto w-fit gap-x-4 gap-y-6 xlg:gap-x-6 mt-8 lg:mt-12 ">
+              {productsData.map((product, idx) => (
+                <button
+                  onClick={() => handleProductChange(idx)}
+                  key={idx}
+                  ref={(el: HTMLButtonElement) => {
+                    if (tabRef.current) {
+                      tabRef.current[idx] = el;
+                    }
+                  }}
+                  className={cn(
+                    "relative border-white/50 border-[1px] custom-text-18 font-medium text-white/50 hover:bg-skyBlue/30 py-3 xlg:py-4 2xl:py-5 px-3 2xl:px-9 cursor-pointer transition-all  duration-300",
+                    {
+                      "border-white": activeProduct === idx,
+                      "text-white ": activeProduct === idx,
+                    }
+                  )}
+                >
+                  {product.label}
+                  {product.status === "coming soon" && (
+                    <span className="uppercase inline-block absolute -top-2.5 right-4 bg-[#3382FB] text-white px-2 text-sm">
+                      {" "}
+                      Coming soon{" "}
+                    </span>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="w-container  ">
+            {/* Desktop/Tablet View - Original single card */}
+            <div className="hidden md:block">
+              <ProductCard product={activeProductData} />
+            </div>
 
+            {/* Mobile View - Swiper for swipe navigation */}
+            <div className="md:hidden relative ">
+              {/* Swiper for mobile swipe functionality */}
+              <Swiper
+                modules={[Pagination]}
+                spaceBetween={22}
+                slidesPerView={1}
+                speed={600}
+                pagination={{
+                  el: ".products-swiper-pagination-bullet-custom",
+                  clickable: true,
+                  bulletClass: "applications-pagination-bullet",
+                  bulletActiveClass: "applications-pagination-bullet-active",
+                }}
+                onSwiper={setSwiperInstance}
+                onSlideChange={(swiper) => {
+                  setActiveProduct(swiper.activeIndex);
+                  setActiveProductData(productsData[swiper.activeIndex]);
+                  handleScroll(swiper.activeIndex);
+                }}
+                allowTouchMove={true}
+                className="products-swiper !pl-1 !overflow-visible"
+              >
+                {productsData.map((product, idx) => (
+                  <SwiperSlide key={idx} className="">
+                    <ProductCard product={product} />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </div>
+          <div className="absolute bottom-5 left-0 w-full sm:hidden  products-swiper-pagination-bullet-custom md:hidden flex justify-center gap-2 mt-6"></div>
+        </div>
+      </section>
+    </div>
   );
 }
 
@@ -236,31 +279,33 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
 
     // Animate image transition with crossfade
     const tl = gsap.timeline();
-    tl.fromTo(currentImage, {
-      opacity: 1,
-      // scale: 0.95,
-      x:0,
-    
-    },{  
-      x:-100,
-      opacity: 0,
-          duration: 0.4,
-      ease: "power1.inOut",
-    });
+    tl.fromTo(
+      currentImage,
+      {
+        opacity: 1,
+        // scale: 0.95,
+        x: 0,
+      },
+      {
+        x: -100,
+        opacity: 0,
+        duration: 0.4,
+        ease: "power1.inOut",
+      }
+    );
     tl.fromTo(
       nextImage,
       {
         opacity: 0,
-         x:200,
-         
+        x: 200,
       },
       {
-        x:0,
-        opacity: 1, 
+        x: 0,
+        opacity: 1,
         duration: 0.4,
         ease: "power1.inOut",
       },
-      
+
       "+=0.01"
     ); // Overlap animations for smooth crossfade
 
@@ -356,7 +401,7 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
         // Image animation
         tl.from(".pc-image-container", {
           opacity: 0,
-          x:100
+          x: 100,
         });
 
         // Left block (title + button)
@@ -391,13 +436,12 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
       <div
         ref={imageContainerRef}
         className=" h-60 md:h-70 2xl:h-70 relative mt-2 "
-      >  
-        {
-          product.id === 4 &&
-        <h3 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[45px] md:text-[60px] lg:text-[80px] xlg:text-[100px] 2xl:text-[120px]  text-nowrap font-medium text-white/10  ">
-              COMING SOON
-            </h3>
-        }
+      >
+        {product.id === 4 && (
+          <h3 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[45px] md:text-[60px] lg:text-[80px] xlg:text-[100px] 2xl:text-[120px]  text-nowrap font-medium text-white/10  ">
+            COMING SOON
+          </h3>
+        )}
         {/* Render all images stacked, control visibility with GSAP */}
         {product.images.map((imageSrc, idx) => (
           <Image

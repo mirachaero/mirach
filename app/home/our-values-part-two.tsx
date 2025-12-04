@@ -197,6 +197,7 @@ export default function OurValuesPartTwo() {
       }
     );
   });
+
   return (
     <div className="relative w-full  blade-top-padding blade-bottom-margin overflow-hidden ">
       <div

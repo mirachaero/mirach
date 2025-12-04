@@ -78,7 +78,7 @@ export const Test = () => {
       for (let x = 0; x < cols; x++) {
         const square = document.createElement("span");
         square.className =
-          "block absolute border-b border-l border-[#6da7ff]/30";
+          "block absolute border-b border-l border-[#6da7ff]/50";
         square.style.cssText = `width:${gridSize}px;height:${gridSize}px;left:${
           x * gridSize
         }px;top:${y * gridSize}px;opacity:0;will-change:opacity`;
@@ -130,7 +130,7 @@ export const Test = () => {
   }, []);
 
   return (
-    <section className="relative w-full md:h-screen min-h-[500px] max-h-[1024px] flex items-center justify-center overflow-hidden clip-path-wave">
+    <section className="relative w-full md:h-screen min-h-[500px] max-h-[1024px] flex items-center justify-center overflow-hidden clip-path-wave-flip">
       <div
         ref={gridRef}
         className="absolute inset-0 z-1"
