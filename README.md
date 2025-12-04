@@ -135,3 +135,4 @@ The project follows **Atomic Design** principles:
 | `npm run lint`  | Run ESLint               |
 
 ---
+ 
