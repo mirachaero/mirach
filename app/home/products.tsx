@@ -172,7 +172,7 @@ export default function Products() {
         id="products"
         className="bg-[url(/assets/home/products/background.jpg)] bg-cover bg-center bg-no-repeat  clip-path-wave-top relative "
       >
-        <div className=" relative blade-top-padding blade-bottom-padding">
+        <div className=" relative blade-top-padding blade-bottom-padding overflow-hidden">
           <div className="w-container ">
             <h2 className="custom-text-48 font-medium text-white text-center">
               Products
