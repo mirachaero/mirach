@@ -13,6 +13,7 @@ import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
+import VtolLogistics from "./vtol-logistic";
 
 type ProductsData = {
   status: "available" | "coming soon";
@@ -215,7 +216,10 @@ export default function Products() {
           <div className="w-container  ">
             {/* Desktop/Tablet View - Original single card */}
             <div className="hidden md:block">
-              <ProductCard product={activeProductData} />
+              {activeProduct !== 4 && (
+                <ProductCard product={activeProductData} />
+              )}
+              {activeProduct === 4 && <VtolLogistics />}
             </div>
 
             {/* Mobile View - Swiper for swipe navigation */}
@@ -243,7 +247,11 @@ export default function Products() {
               >
                 {productsData.map((product, idx) => (
                   <SwiperSlide key={idx} className="">
-                    <ProductCard product={product} />
+                    {idx !== 4 ? (
+                      <ProductCard product={product} />
+                    ) : (
+                      <VtolLogistics />
+                    )}
                   </SwiperSlide>
                 ))}
               </Swiper>
