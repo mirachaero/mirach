@@ -117,7 +117,7 @@ mirach/
 
 ## 🎨 Component Architecture
 
-The project follows **Atomic Design** principles:
+The project follows **Atomic Design** principles:-
 
 - **Atoms** - Basic building blocks (buttons, inputs)
 - **Molecules** - Simple component combinations (animated text, impact products)
