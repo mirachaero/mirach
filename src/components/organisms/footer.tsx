@@ -16,12 +16,12 @@ export const Footer = () => {
     <footer className="relative bg-gray blade-top-padding-lg">
       <div className="w-container">
         <div className="text-center">
-           <AnimateText finalColor="#2a2b7d" intialColor="#9E9FBF">
-          <h2 className="custom-text-48 text-blue font-medium ">
-            Partner with Mirach Aerospace <br /> to shape the future of unmanned
-            aerial missions.
-          </h2>
-           </AnimateText>
+          <AnimateText finalColor="#2a2b7d" intialColor="#9E9FBF">
+            <h2 className="custom-text-48 text-blue font-medium ">
+              Partner with Mirach Aerospace <br /> to shape the future of
+              unmanned aerial missions.
+            </h2>
+          </AnimateText>
 
           {/* <div className="grid md:flex flex-wrap justify-center xl:grid grid-cols-2 md:grid-cols-5 text-nowrap gap-3 md:gap-4 lg:gap-6 mt-8 md:mt-10 "> */}
           <div className="grid grid-cols-2 max-w-2xl  mx-auto text-nowrap gap-3 md:gap-4 lg:gap-6 mt-8 md:mt-10 ">
@@ -41,7 +41,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center leading-none  border-b-3 border-white pb-4 md:b-6 mb-10">
+        <div className="flex flex-col items-center justify-center leading-none      ">
           <div className="relative w-30 h-30 md:w-40 md:h-40 py-25 md:py-30 ">
             <Image
               src="/mirach-aerospace-footer.png"
@@ -60,7 +60,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex items-center justify-center gap-4 pb-10 md:pb-12">
-          <Link href="#" target="_blank">
+          {/* <Link href="#" target="_blank">
             <div className="border-1 border-blue rounded-md p-2.5 hover:scale-105 transition-transform duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +123,7 @@ export const Footer = () => {
                 />
               </svg>
             </div>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </footer>

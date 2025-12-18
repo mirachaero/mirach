@@ -1,25 +1,24 @@
-import { Banner } from "./banner";
 import CreateChange from "./create-change";
 import OurValues from "./our-values";
 import WhyChooseMirach from "./why-choose";
 import Domains from "./domains";
 import Products from "./products";
-import VtolLogistics from "./vtol-logistic";
-import BannerGrid from "./banner-grid";
-import { Test } from "./test";
+import { Banner } from "./banner";
+import Partners from "./partners";
 
 export default function HomePage() {
   return (
     <main>
-      <Test />
+      <Banner />
       {/* <BannerGrid/> */}
       <div className="home-page-wapper">
         <OurValues />
       </div>
       <Domains />
       <Products />
-      <VtolLogistics />
+      {/* <VtolLogistics />  */}
       <WhyChooseMirach />
+      <Partners />
       <CreateChange />
       <svg
         className="w-full h-full absolute inset-0  "

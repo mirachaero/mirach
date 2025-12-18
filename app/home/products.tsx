@@ -32,7 +32,7 @@ const productsData: ProductsData[] = [
     label: "Tailsitter – Zeus Beta",
     title: (
       <h3 className="custom-text-48 font-medium text-lightGray/50 max-w-sm xlg:max-w-md">
-        Survelliance Tailsitter - <span className="text-white">Zeus (β)</span>
+        Survelliance Tailsitter - <span className="text-white">Zeus β</span>
       </h3>
     ),
     features: [

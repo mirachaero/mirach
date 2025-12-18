@@ -42,15 +42,37 @@ export default function OurValues() {
             <div className="our-value-trigger text-lightGray font-normal space-y-4 2xl:space-y-6 py-4 md:py-8 xl:p-8  2xl:pl-[5vw] 2xl:py-12">
               <AnimateText onscroll={true}>
                 <p className="custom-text-24">
-                  As a defence deep-tech manufacturing company driven by
-                  research and development, we, at Mirach Aerospace, deliver
-                  India-made, purpose-specific aerial mobility, manufacturing
-                  and autonomous drone technology solutions for{" "}
+                  As a{" "}
+                  <span className="text-white font-medium">
+                    DPIIT- and MSME-certified{" "}
+                  </span>{" "}
+                  defence deep-tech manufacturing company driven by research and
+                  development, we, at Mirach Aerospace, deliver India-made,
+                  purpose-specific aerial mobility, manufacturing and autonomous
+                  drone technology solutions for{" "}
                   <span className="text-white font-medium">
                     Defence, Government, and Civil operations applications.
                   </span>
                 </p>
               </AnimateText>
+              <div className="flex justify-center sm:justify-start items-center gap-4">
+                <div className="w-[132px] h-[85px] relative">
+                  <Image
+                    className="object-cover"
+                    src="/assets/home/our-values/dpiit.png"
+                    fill
+                    alt="DPIIT"
+                  />
+                </div>
+                <div className="w-[132px] h-[85px] relative">
+                  <Image
+                    className="object-cover"
+                    src="/assets/home/our-values/msme.png"
+                    fill
+                    alt="MSME"
+                  />
+                </div>
+              </div>
               <AnimateText onscroll={true}>
                 <p className="custom-text-24">
                   The unmanned vertical we cater is Loiter Munition UASs for
@@ -67,7 +89,7 @@ export default function OurValues() {
                   from the ground up (up to large class). Embellished with
                   proficient drone technology champions, our end-to-end hardware
                   and software solutions span all aircraft types (fixed wing,
-                  hybrid VTOL, helicopters, multicopters, and tailsitters)
+                  hybrid VTOL, helicopters, multicopters and tailsitters)
                 </p>
               </AnimateText>
               <div className="pt-6 space-x-6 md:space-x-10 space-y-6">
