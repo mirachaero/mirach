@@ -11,18 +11,24 @@ const partnerData: PartnerProps[] = [
     image: "/assets/home/partners/drishti-cps-foundation.png",
     alt: "Drishti CPS Foundation IIT Indore",
   },
+  // {
+  //   image: "/assets/home/partners/electro-pneumatics.png",
+  //   alt: "Electro Pneumatics",
+  // },
+  // {
+  //   image: "/assets/home/partners/hydraulic-india.png",
+  //   alt: "Hydraulic India",
+  // },
+  
   {
-    image: "/assets/home/partners/electro-pneumatics.png",
-    alt: "Electro Pneumatics",
-  },
-  {
-    image: "/assets/home/partners/hydraulic-india.png",
-    alt: "Hydraulic India",
+    image: "/assets/home/partners/elected.png",
+    alt: "Indian Institute of Management Udaipur",
   },
   {
     image: "/assets/home/partners/IIMU.png",
     alt: "Indian Institute of Management Udaipur",
   },
+  
 ];
 
 export default function Partners() {
@@ -37,7 +43,7 @@ export default function Partners() {
             Our esteemed partners
           </h2>
         </AnimateText>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 2xl:gap-6 w-container mt-6 md:mt-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 2xl:gap-6 mx-auto w-full max-w-6xl px-4 mt-6 md:mt-10">
           {partnerData.map((partner, index) => (
             <div
               key={index}

@@ -58,8 +58,8 @@ export default function WhyChooseMirach() {
                 With a combined experience of over two decades in
                 <span className="text-black font-medium">
                   {" "}
-                  designing, manufacturing, and deploying UAS in defence,
-                  government, and civil operations, {" "}
+                  Designing, Manufacturing, and Deploying UAS in Defence,
+                  Government, and Civil Operations, {" "}
                 </span>
                 Mirach Aerospace empowers clients with scale and reliability.
               </p>

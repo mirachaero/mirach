@@ -30,7 +30,7 @@ const productsData: ProductsData[] = [
   {
     id: 0,
     status: "available",
-    label: "Tailsitter – Zeus Beta",
+    label: "Tailsitter – Zeus β",
     title: (
       <h3 className="custom-text-48 font-medium text-lightGray/50 max-w-sm xlg:max-w-md">
         Survelliance Tailsitter - <span className="text-white">Zeus β</span>
@@ -70,29 +70,29 @@ const productsData: ProductsData[] = [
     ctaLink: "#",
   },
 
-  {
-    id: 2,
-    status: "available",
-    label: "Helicopter – Bumblebee MK I",
-    title: (
-      <h3 className="custom-text-48 font-medium text-lightGray/50 max-w-sm xlg:max-w-md">
-        Helicopter – <span className="text-white">Bumblebee MK I</span>
-      </h3>
-    ),
-    features: [
-      "Payload: up to 1 kg",
-      "Speed: Up to 60 km/h",
-      "Flight time: Up to 60 min",
-      "Range: Up to 20 km",
-      "Use case: Surveillance, Tactical Helicopter UAV for high altitude, high-resolution, aerial eye and surveillance.",
-    ],
-    images: [
-      "/assets/home/products/helicopter–bumblebee-MK-I-v1.png",
-      "/assets/home/products/helicopter–bumblebee-MK-I-v2.png",
-    ],
-    ctaText: "Know more",
-    ctaLink: "#",
-  },
+  // {
+  //   id: 2,
+  //   status: "available",
+  //   label: "Helicopter – Bumblebee MK I",
+  //   title: (
+  //     <h3 className="custom-text-48 font-medium text-lightGray/50 max-w-sm xlg:max-w-md">
+  //       Helicopter – <span className="text-white">Bumblebee MK I</span>
+  //     </h3>
+  //   ),
+  //   features: [
+  //     "Payload: up to 1 kg",
+  //     "Speed: Up to 60 km/h",
+  //     "Flight time: Up to 60 min",
+  //     "Range: Up to 20 km",
+  //     "Use case: Surveillance, Tactical Helicopter UAV for high altitude, high-resolution, aerial eye and surveillance.",
+  //   ],
+  //   images: [
+  //     "/assets/home/products/helicopter–bumblebee-MK-I-v1.png",
+  //     "/assets/home/products/helicopter–bumblebee-MK-I-v2.png",
+  //   ],
+  //   ctaText: "Know more",
+  //   ctaLink: "#",
+  // },
   {
     id: 3,
     status: "available",
@@ -216,10 +216,10 @@ export default function Products() {
           <div className="w-container  ">
             {/* Desktop/Tablet View - Original single card */}
             <div className="hidden md:block">
-              {activeProduct !== 4 && (
+              {activeProduct !== 3 && (
                 <ProductCard product={activeProductData} />
               )}
-              {activeProduct === 4 && <VtolLogistics />}
+              {activeProduct === 3 && <VtolLogistics />}
             </div>
 
             {/* Mobile View - Swiper for swipe navigation */}
@@ -247,7 +247,7 @@ export default function Products() {
               >
                 {productsData.map((product, idx) => (
                   <SwiperSlide key={idx} className="">
-                    {idx !== 4 ? (
+                    {idx !== 3 ? (
                       <ProductCard product={product} />
                     ) : (
                       <VtolLogistics />

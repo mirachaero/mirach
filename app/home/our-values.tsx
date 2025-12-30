@@ -11,11 +11,10 @@ export default function OurValues() {
         <div className="">
           <AnimateText onscroll={true}>
             <h2 className="custom-text-48 text-white md:max-w-3xl xl:max-w-[60vw] 2xl:max-w-[50vw]   font-medium">
-              From concept to build, we create{" "}
-              <span className="text-skyBlue"> Unmanned</span>{" "}
-              <span className="text-skyBlue"> Aerial </span>{" "}
-              <span className="text-skyBlue"> Systems </span>{" "}
-              <span className="text-skyBlue"> (UAS) </span> that deliver
+           From idea to execution, we deliver mission-ready 
+              <span className="text-skyBlue"> Unmanned Aerial Systems.</span>{" "}
+             
+            
             </h2>
           </AnimateText>
         </div>
@@ -55,7 +54,7 @@ export default function OurValues() {
                   </span>
                 </p>
               </AnimateText>
-              <div className="flex justify-center sm:justify-start items-center gap-4">
+              {/* <div className="flex justify-center sm:justify-start items-center gap-4">
                 <div className="w-[132px] h-[85px] relative">
                   <Image
                     className="object-cover"
@@ -72,10 +71,10 @@ export default function OurValues() {
                     alt="MSME"
                   />
                 </div>
-              </div>
+              </div> */}
               <AnimateText onscroll={true}>
                 <p className="custom-text-24">
-                  The unmanned vertical we cater is Loiter Munition UASs for
+                  The unmanned vertical we cater is Loiter Munition UAS for
                   tactical operations, logistic UAVs for emergency medicine
                   supplies, or Army Payloads at high terrain regions, and
                   surveillance reconnaissance UAVs for live tracking intruders
@@ -87,9 +86,9 @@ export default function OurValues() {
                   Attuned to the wide applications, we design, manufacture and
                   develop sophisticated UAS with Artificial Intelligence onboard
                   from the ground up (up to large class). Embellished with
-                  proficient drone technology champions, our end-to-end hardware
-                  and software solutions span all aircraft types (fixed wing,
-                  hybrid VTOL, helicopters, multicopters and tailsitters)
+                  proficient drone technology champions, our end-to-end Hardware
+                  and Software solutions span all aircraft types (Fixed wing,
+                  HYBRID VTOL, Helicopters, Multicopters and Tailsitters)
                 </p>
               </AnimateText>
               <div className="pt-6 space-x-6 md:space-x-10 space-y-6">
