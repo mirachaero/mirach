@@ -13,18 +13,6 @@ const partnerData: PartnerProps[] = [
     alt: "Drishti CPS Foundation IIT Indore",
     label: "Incubated at",
   },
-<<<<<<< HEAD
-  // {
-  //   image: "/assets/home/partners/electro-pneumatics.png",
-  //   alt: "Electro Pneumatics",
-  // },
-  // {
-  //   image: "/assets/home/partners/hydraulic-india.png",
-  //   alt: "Hydraulic India",
-  // },
-
-=======
->>>>>>> d5e9f7587f0d86ef23bc1b065100e5d0959b7308
   {
     image: "/assets/home/partners/elected.png",
     alt: "Electro Pneumatics",
@@ -49,21 +37,6 @@ export default function Partners() {
             Our esteemed partners
           </h2>
         </AnimateText>
-<<<<<<< HEAD
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 2xl:gap-6 mx-auto w-full max-w-4xl xlg:max-w-6xl px-4 mt-6 md:mt-10">
-          {partnerData.map((partner, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center relative w-full h-[80px] lg:h-[140px]   2xl:h-[168px] border border-skyBlue"
-            >
-              <Image
-                src={partner.image}
-                alt={partner.alt}
-                fill
-                quality={100}
-                className="object-cover"
-              />
-=======
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-4 2xl:gap-6 mx-auto w-full max-w-6xl px-4 mt-8 md:mt-16">
           {partnerData.map((partner, index) => (
             <div key={index} className="flex flex-col">
@@ -83,7 +56,6 @@ export default function Partners() {
                   />
                 </div>
               </div>
->>>>>>> d5e9f7587f0d86ef23bc1b065100e5d0959b7308
             </div>
           ))}
         </div>
