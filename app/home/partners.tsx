@@ -19,7 +19,7 @@ const partnerData: PartnerProps[] = [
   //   image: "/assets/home/partners/hydraulic-india.png",
   //   alt: "Hydraulic India",
   // },
-  
+
   {
     image: "/assets/home/partners/elected.png",
     alt: "Indian Institute of Management Udaipur",
@@ -28,7 +28,6 @@ const partnerData: PartnerProps[] = [
     image: "/assets/home/partners/IIMU.png",
     alt: "Indian Institute of Management Udaipur",
   },
-  
 ];
 
 export default function Partners() {
@@ -43,11 +42,11 @@ export default function Partners() {
             Our esteemed partners
           </h2>
         </AnimateText>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 2xl:gap-6 mx-auto w-full max-w-6xl px-4 mt-6 md:mt-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 2xl:gap-6 mx-auto w-full max-w-4xl xlg:max-w-6xl px-4 mt-6 md:mt-10">
           {partnerData.map((partner, index) => (
             <div
               key={index}
-              className="flex items-center justify-center relative w-full h-[80px] lg:h-[100px] xl:h-[120px] xlg:h-[140px] 2xl:h-[168px] border border-skyBlue"
+              className="flex items-center justify-center relative w-full h-[80px] lg:h-[140px]   2xl:h-[168px] border border-skyBlue"
             >
               <Image
                 src={partner.image}
