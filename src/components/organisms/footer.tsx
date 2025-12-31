@@ -33,9 +33,8 @@ export const Footer = () => {
                 size="large"
                 link={link.href}
                 role="link"
-                className={` text-black border-white xl:text-lg font-medium   xl:w-full xl:py-4 2xl:py-6 ${
-                  idx === 4 ? "col-span-2" : ""
-                } md:col-span-1`}
+                className={` text-black border-white xl:text-lg font-medium   xl:w-full xl:py-4 2xl:py-6 ${idx === 4 ? "col-span-2" : ""
+                  } md:col-span-1`}
               />
             ))}
           </div>
@@ -125,6 +124,39 @@ export const Footer = () => {
             </div>
           </Link> */}
         </div>
+        <div className="mt-10 md:mt-16 lg:mt-24 pb-10">
+          <div className="w-full h-[1px] bg-white opacity-50 mb-8"></div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12 text-[#656565]">
+            <div className="">
+              <p className="text-black font-medium custom-text-16 opacity-50">Email</p>
+              <a
+                href="mailto:info@mirachaerospace.com"
+                className="text-black font-medium custom-text-16 mt-4"
+              >
+                info@mirachaerospace.com
+              </a>
+            </div>
+            <div className="">
+              <p className="text-black font-medium custom-text-16 opacity-50">Address</p>
+              <p className="text-black font-medium custom-text-16 mt-2">
+                423, Platinum Paradise, near Malwa <br />
+                Institute of Technology, Nipania Bypass <br />
+                Road, Indore, MP, 452016
+              </p>
+            </div>
+            <div className="flex flex-col ">
+              <div className="flex flex-row gap-1">
+                <p className="text-black font-medium custom-text-16 opacity-50">GSTIN: </p>
+                <span className="text-black font-medium custom-text-16 ">23AATCM8995Q1Z2</span>
+              </div>
+              <div className="flex flex-row gap-1 mt-2">
+                <p className="text-black font-medium custom-text-16 opacity-50">CIN: </p>
+                <span className="text-black font-medium custom-text-16 ">U30305MP2025PTC079134</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </footer>
   );

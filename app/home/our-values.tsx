@@ -74,7 +74,7 @@ export default function OurValues() {
               </div> */}
               <AnimateText onscroll={true}>
                 <p className="custom-text-24">
-                  The unmanned vertical we cater is Loiter Munition UAS for
+                  The unmanned vertical we cater is Loiter Munition  for
                   tactical operations, logistic UAVs for emergency medicine
                   supplies, or Army Payloads at high terrain regions, and
                   surveillance reconnaissance UAVs for live tracking intruders
@@ -88,7 +88,7 @@ export default function OurValues() {
                   from the ground up (up to large class). Embellished with
                   proficient drone technology champions, our end-to-end Hardware
                   and Software solutions span all aircraft types (Fixed wing,
-                  HYBRID VTOL, Helicopters, Multicopters and Tailsitters)
+                   VTOL, Helicopters, Multicopters and Tailsitters)
                 </p>
               </AnimateText>
               <div className="pt-6 space-x-6 md:space-x-10 space-y-6">
