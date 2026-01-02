@@ -114,7 +114,7 @@ mirach/
 ```
 
 ---
-
+ 
 ## 🎨 Component Architecture
 
 The project follows **Atomic Design** principles:
