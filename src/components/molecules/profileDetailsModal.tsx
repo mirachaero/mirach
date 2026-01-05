@@ -88,23 +88,23 @@ export const ProfileDetailsModal = ({
           <div className="    relative"></div>
 
           {/* Profile Info Section (Overlapping) */}
-          <div className="   relative z-10 mb-6">
+          <div className="   relative z-10">
             <div className="flex flex-row gap-3 md:gap-6 items-end ">
               {/* Image Container - Fixed size to keep 400x400 crisp */}
-              <div className=" size-40 md:size-48   border-4 md:border-8 border-white shadow-2xl overflow-hidden bg-gray-100 shrink-0 relative group/img">
+              {/* <div className=" size-40 md:size-48   border-4 md:border-8 border-white shadow-2xl overflow-hidden bg-gray-100 shrink-0 relative group/img">
                 <Image
                   src={data.image}
                   fill
                   alt={data.name}
                   className="object-cover object-top transition-transform duration-500 group-hover/img:scale-105"
                 />
-              </div>
+              </div> */}
 
               <div className="pb-2 md:pb-4 flex-grow">
-                <h2 className="text-lg md:text-2xl lg:text-4xl font-extrabold text-[#2a2b7d] leading-tight flex items-center gap-3">
+                <h2 className="text-2xl md:text-2xl   font-semibold text-[#2a2b7d] leading-tight flex items-center gap-3">
                   {data.name}
                 </h2>
-                <p className="text-base md:text-lg text-skyBlue font-medium md:font-semibold tracking-wide mt-1">
+                <p className="text-base md:text-lg text-skyBlue font-medium   tracking-wide ">
                   {data.designation}
                 </p>
               </div>
@@ -113,16 +113,16 @@ export const ProfileDetailsModal = ({
 
           {/* Content Section */}
           <div className="overflow-y-auto custom-scrollbar flex flex-col">
-            <div className="space-y-4 custom-text-20 text-darkGray text-lg leading-relaxed mb-8 prose prose-slate">
+            <div className="space-y-4 custom-text-20 text-darkGray text-lg leading-relaxed mb-6 md:mb-8 prose prose-slate">
               {data.content}
             </div>
 
-            <div className="mt-auto pt-8 border-t border-gray-100 flex flex-wrap gap-4 items-center justify-between">
+            <div className="mt-auto pt-6 md:pt-8 border-t border-gray-200 flex flex-wrap gap-4 items-center justify-between">
               <Link
                 href={data.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-4 py-3.5 bg-[#0077B5] text-white   font-bold hover:bg-[#005a8a] transition-all duration-300 transform hover:-translate-y-1 shadow-[0_10px_20px_rgba(0,119,181,0.2)]"
+                className="inline-flex items-center gap-3 px-4 py-3.5 bg-[#0077B5] text-white   font-semibold hover:bg-[#005a8a] transition-all duration-300 transform hover:-translate-y-1 shadow-[0_10px_20px_rgba(0,119,181,0.2)]"
               >
                 <svg
                   className="size-5"
