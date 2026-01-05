@@ -13,8 +13,14 @@ const footerLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="relative bg-gray blade-top-padding-lg">
-      <div className="w-container">
+    <footer className="relative bg-gray  blade-top-padding-lg">
+      <Image
+        src="/assets/home/footer/mirach-footer-bg.png"
+        alt="Mirach Aerospace "
+        fill
+        className="object-cover mix-blend-color-burn z-0 "
+      />
+      <div className="w-container relative">
         <div className="text-center">
           <AnimateText finalColor="#2a2b7d" intialColor="#9E9FBF">
             <h2 className="custom-text-48 text-blue font-medium ">
@@ -125,7 +131,7 @@ export const Footer = () => {
             </div>
           </Link> */}
         </div>
-        <div className="mt-10 md:mt-16 lg:mt-24 pb-10">
+        <div className=" blade-bottom-padding md:mt-8">
           <div className="w-full h-[1px] bg-white opacity-50 mb-8"></div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12 text-[#656565]">
             <div className="">

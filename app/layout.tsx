@@ -6,7 +6,7 @@ import { Lenis } from "@/src/lib/lenisSmoothScroll";
 import { Footer } from "@/src/components/organisms/footer";
 
 export const metadata: Metadata = {
-  title: "Mirach",
+  title: "Mirach Aerospace",
   description: "Airborne innovation with precision",
   robots: {
     index: true,
@@ -21,30 +21,30 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  authors: [{ name: "Mirach" }],
-  publisher: "Mirach",
+  authors: [{ name: "Mirach Aerospace" }],
+  publisher: "Mirach Aerospace",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mirach-dev.vercel.app/",
-    siteName: "Mirach",
-    title: "Mirach",
+    url: "https://mirachaerospace.com/",
+    siteName: "Mirach Aerospace",
+    title: "Mirach Aerospace",
     description: "Airborne innovation with precision",
     images: [
       {
-        url: "https://mirach-dev.vercel.app/mirach-aerospace.webp",
+        url: "https://mirachaerospace.com/mirach-aerospace.webp",
         width: 1200,
         height: 630,
-        alt: "Mirach",
+        alt: "Mirach Aerospace",
         type: "image/webp",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mirach",
+    title: "Mirach Aerospace",
     description: "Airborne innovation with precision",
-    images: ["https://mirach-dev.vercel.app/mirach-aerospace.webp"],
+    images: ["https://mirachaerospace.com/mirach-aerospace.webp"],
   },
 };
 
