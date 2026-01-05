@@ -4,7 +4,7 @@
 
 Mirach is a cutting-edge web platform showcasing Unmanned Aerial Systems (UAS) designed and manufactured in India. From concept to build, we create drone intelligence solutions for defense, research, industrial, and environmental applications.
 
-🌐 **Live Demo:** [https://mirach-dev.vercel.app/](https://mirach-dev.vercel.app/)
+🌐 **Live Website:** [https://mirachaerospace.com/](https://mirachaerospace.com/)
 
 ---
 
