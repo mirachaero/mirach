@@ -7,6 +7,7 @@ import AnimateText from "@/src/components/molecules/AnimateText";
 import { Activity, ReactNode, useState, useRef, useEffect } from "react";
 import { X } from "lucide-react";
 import { ProfileDetailsModal } from "@/src/components/molecules/profileDetailsModal";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,7 +15,7 @@ type profileProps = {
   image: string;
   name: string;
   designation: string;
-  linkedinUrl: string;
+  linkedinUrl?: string;
   content: ReactNode;
 };
 
@@ -48,7 +49,7 @@ const profileData: profileProps[] = [
     image: "/assets/home/why-choose/kamlesh-suryawanshi.jpg",
     name: "Kamlesh Suryawanshi",
     designation: "Founder and COO",
-    linkedinUrl: "#",
+    // linkedinUrl: "#",
     content: (
       <>
         <p className="text-base md:text-lg">
@@ -154,8 +155,11 @@ const Card = ({ data }: { data: profileProps }) => {
             <p className="text-darkGray/90 text-base xl:text-lg">
               {data.designation}
             </p>
-          </div>
-          <div className="border border-blue rounded-sm">
+          </div> 
+           {
+             data.linkedinUrl &&
+          <div onClick={(e:any)=> e.stopPropagation()}  className="border border-blue rounded-sm">
+            <Link href={data.linkedinUrl}>
             <svg
               className="m-2"
               xmlns="http://www.w3.org/2000/svg"
@@ -176,7 +180,9 @@ const Card = ({ data }: { data: profileProps }) => {
                 </clipPath>
               </defs>
             </svg>
+            </Link>
           </div>
+           }
         </div>
       </div>
     </>
