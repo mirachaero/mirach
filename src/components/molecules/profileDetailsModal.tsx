@@ -12,7 +12,7 @@ type profileProps = {
   image: string;
   name: string;
   designation: string;
-  linkedinUrl: string;
+  linkedinUrl?: string;
   content: ReactNode;
 };
 
@@ -116,7 +116,8 @@ export const ProfileDetailsModal = ({
             <div className="space-y-4 custom-text-20 text-darkGray text-lg leading-relaxed mb-6 md:mb-8 prose prose-slate">
               {data.content}
             </div>
-
+           {
+            data.linkedinUrl &&
             <div className="mt-auto pt-6 md:pt-8 border-t border-gray-200 flex flex-wrap gap-4 items-center justify-between">
               <Link
                 href={data.linkedinUrl}
@@ -135,6 +136,8 @@ export const ProfileDetailsModal = ({
                 <span className="text-sm   tracking-wider">LinkedIn</span>
               </Link>
             </div>
+                       }
+
           </div>
         </div>
 
