@@ -24,7 +24,8 @@ const profileData: profileProps[] = [
     image: "/assets/home/why-choose/gurav-singh.png",
     name: "Gaurav Singh",
     designation: "Founder and CEO",
-    linkedinUrl: "#",
+    linkedinUrl:
+      "https://www.linkedin.com/in/gsaero?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     content: (
       <>
         <p className="text-base md:text-lg">
@@ -155,34 +156,36 @@ const Card = ({ data }: { data: profileProps }) => {
             <p className="text-darkGray/90 text-base xl:text-lg">
               {data.designation}
             </p>
-          </div> 
-           {
-             data.linkedinUrl &&
-          <div onClick={(e:any)=> e.stopPropagation()}  className="border border-blue rounded-sm">
-            <Link href={data.linkedinUrl}>
-            <svg
-              className="m-2"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="22"
-              viewBox="0 0 24 22"
-              fill="none"
-            >
-              <g clipPath="url(#clip0_1_7840)">
-                <path
-                  d="M1.43523 7.32581H6.15009V21.5143H1.43523V7.32581ZM3.82422 0.486328C2.21052 0.486328 1.15625 1.54574 1.15625 2.93624C1.15625 4.29815 2.17967 5.38834 3.76251 5.38834H3.79258C5.43714 5.38834 6.46129 4.2981 6.46129 2.93624C6.43044 1.54574 5.43719 0.486328 3.82422 0.486328ZM17.7264 6.99251C15.2237 6.99251 14.1025 8.36909 13.4769 9.33447V7.32581H8.7607C8.82315 8.65687 8.7607 21.5143 8.7607 21.5143H13.4769V13.5904C13.4769 13.1661 13.5079 12.7433 13.6319 12.4392C13.9734 11.592 14.7494 10.7147 16.0509 10.7147C17.7587 10.7147 18.4407 12.0164 18.4407 13.9229V21.5143H23.1562V13.3784C23.1562 9.02029 20.8304 6.99251 17.7264 6.99251Z"
-                  fill="#21225D"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_1_7840">
-                  <rect width="23.2222" height="22" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-            </Link>
           </div>
-           }
+          {data.linkedinUrl && (
+            <div
+              onClick={(e: any) => e.stopPropagation()}
+              className="border border-blue rounded-sm"
+            >
+              <Link href={data.linkedinUrl} target="_blank">
+                <svg
+                  className="m-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="22"
+                  viewBox="0 0 24 22"
+                  fill="none"
+                >
+                  <g clipPath="url(#clip0_1_7840)">
+                    <path
+                      d="M1.43523 7.32581H6.15009V21.5143H1.43523V7.32581ZM3.82422 0.486328C2.21052 0.486328 1.15625 1.54574 1.15625 2.93624C1.15625 4.29815 2.17967 5.38834 3.76251 5.38834H3.79258C5.43714 5.38834 6.46129 4.2981 6.46129 2.93624C6.43044 1.54574 5.43719 0.486328 3.82422 0.486328ZM17.7264 6.99251C15.2237 6.99251 14.1025 8.36909 13.4769 9.33447V7.32581H8.7607C8.82315 8.65687 8.7607 21.5143 8.7607 21.5143H13.4769V13.5904C13.4769 13.1661 13.5079 12.7433 13.6319 12.4392C13.9734 11.592 14.7494 10.7147 16.0509 10.7147C17.7587 10.7147 18.4407 12.0164 18.4407 13.9229V21.5143H23.1562V13.3784C23.1562 9.02029 20.8304 6.99251 17.7264 6.99251Z"
+                      fill="#21225D"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_7840">
+                      <rect width="23.2222" height="22" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </>
