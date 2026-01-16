@@ -151,9 +151,9 @@ export const Banner = () => {
       <div className="absolute inset-0 z-2">
         <Image
           src="/assets/home/banner/drone.webp"
-          alt="Mirach Aerospace Banner"
+          alt="Mirach Aerospace"
           fill
-          className="object-cover "
+          className="object-cover  scale-80 lg:scale-100 "
           priority
           quality={100}
         />

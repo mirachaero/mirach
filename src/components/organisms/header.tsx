@@ -94,7 +94,7 @@ export const Header = () => {
             )}
           >
             <Image
-              src="/mirach-logo.png"
+              src="/mirach.png"
               alt="Mirach Aerospace"
               fill
               className="object-contain"
@@ -104,7 +104,7 @@ export const Header = () => {
           </Link>
 
           {/* Navigation - Desktop */}
-          <nav className="hidden lg:flex items-center gap-x-14">
+          <nav className="hidden xl:flex items-center gap-x-14">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -117,7 +117,7 @@ export const Header = () => {
           </nav>
 
           {/* Action Button - Desktop */}
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <Button
               text="Join us"
               theme="blue"
@@ -132,7 +132,7 @@ export const Header = () => {
           {/* Mobile Menu Toggle */}
           <button
             onClick={toggleMobileMenu}
-            className="lg:hidden text-white p-2 z-50 relative"
+            className="xl:hidden text-white p-2 z-50 relative"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
             <div className="w-8 h-6 flex flex-col justify-between items-end">
@@ -163,7 +163,7 @@ export const Header = () => {
 
       <div
         className={cn(
-          "fixed inset-0 z-40 lg:hidden transition-all duration-500 ease-in-out",
+          "fixed inset-0 z-40 xl:hidden transition-all duration-500 ease-in-out",
           mobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"

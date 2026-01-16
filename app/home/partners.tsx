@@ -23,6 +23,17 @@ const partnerData: PartnerProps[] = [
     alt: "Indian Institute of Management Udaipur",
     label: "Incubated at",
   },
+  {
+    image: "/assets/home/partners/IIT-indore.png",
+    alt: "Indian Institute of Management Udaipur",
+    label: "Incubated at",
+  },
+  {
+    image: "/assets/home/partners/IIM-udaipur.png",
+    alt: "Indian Institute of Management Udaipur",
+    label: "Incubated at",
+  },
+  
 ];
 
 export default function Partners() {
@@ -37,15 +48,15 @@ export default function Partners() {
             Our esteemed partners
           </h2>
         </AnimateText>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-4 2xl:gap-6 mx-auto w-full max-w-6xl px-4 mt-8 md:mt-16">
+        <div className=" flex flex-wrap gap-6 md:gap-4 2xl:gap-6 mx-auto w-full max-w-6xl px-4 mt-8 md:mt-16 justify-center ">
           {partnerData.map((partner, index) => (
-            <div key={index} className="flex flex-col">
+            <div key={index} className="flex flex-col  min-w-38 md:min-w-60 lg:min-w-70 xlg:min-w-80">
               <div className="h-8 md:h-10 flex items-center justify-center">
                 <p className="text-[#656565] text-center custom-text-16 font-medium">
                   {partner.label}
                 </p>
               </div>
-              <div className="flex items-center justify-center relative w-full h-[120px] lg:h-[130px] xl:h-[140px] xlg:h-[150px] 2xl:h-[168px] border border-skyBlue bg-white/30 px-6 py-4">
+              <div className="flex items-center justify-center relative w-full h-[80px] md:h-[120px] lg:h-[130px] xl:h-[140px] xlg:h-[150px] 2xl:h-[168px] border border-skyBlue bg-white/30 px-3 py-2 md:px-4 md:py-3 lg:px-6 lg:py-4">
                 <div className="relative w-full h-full">
                   <Image
                     src={partner.image}
