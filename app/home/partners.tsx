@@ -3,37 +3,33 @@ import Image from "next/image";
 
 type PartnerProps = {
   image: string;
-  label?: string;
   alt: string;
 };
 
-const partnerData: PartnerProps[] = [
+const incubatedData: PartnerProps[] = [
+  {
+    image: "/assets/home/partners/IIT-indore.png",
+    alt: "Indian Institute of Technology Indore",
+  },
   {
     image: "/assets/home/partners/drishti-cps-foundation.png",
     alt: "Drishti CPS Foundation IIT Indore",
-    label: "Incubated at",
-  },
-  {
-    image: "/assets/home/partners/elected.png",
-    alt: "Electro Pneumatics",
-    label: "",
   },
   {
     image: "/assets/home/partners/IIMU.png",
     alt: "Indian Institute of Management Udaipur",
-    label: "Incubated at",
-  },
-  {
-    image: "/assets/home/partners/IIT-indore.png",
-    alt: "Indian Institute of Management Udaipur",
-    label: "Incubated at",
   },
   {
     image: "/assets/home/partners/IIM-udaipur.png",
     alt: "Indian Institute of Management Udaipur",
-    label: "Incubated at",
   },
-  
+];
+
+const partnerData: PartnerProps[] = [
+  {
+    image: "/assets/home/partners/elected.png",
+    alt: "Electro Pneumatics",
+  },
 ];
 
 export default function Partners() {
@@ -43,20 +39,93 @@ export default function Partners() {
       className="bg-[radial-gradient(circle,rgba(255,255,255,0.9)_0%,rgba(238,238,238,1)_90%)]"
     >
       <div className="xl:w-[80%] mx-auto border-t-2 border-white blade-top-padding blade-bottom-padding">
-        <AnimateText finalColor="#2a2b7d" intialColor="#9E9FBF">
-          <h2 className="custom-text-48 font-medium text-blue text-center">
-            Our esteemed partners
-          </h2>
-        </AnimateText>
-        <div className=" flex flex-wrap gap-6 md:gap-4 2xl:gap-6 mx-auto w-full max-w-6xl px-4 mt-8 md:mt-16 justify-center ">
-          {partnerData.map((partner, index) => (
-            <div key={index} className="flex flex-col  min-w-38 md:min-w-60 lg:min-w-70 xlg:min-w-80">
-              <div className="h-8 md:h-10 flex items-center justify-center">
-                <p className="text-[#656565] text-center custom-text-16 font-medium">
-                  {partner.label}
-                </p>
+        {/* Incubated At Section */}
+        <div className="mb-12 md:mb-16">
+          <AnimateText finalColor="#2a2b7d" intialColor="#9E9FBF">
+            <h2 className="custom-text-48 font-medium text-blue text-center">
+              Incubated At
+            </h2>
+          </AnimateText>
+          <div className="flex flex-wrap gap-10 gap-y-14 mx-auto w-full max-w-4xl px-4 mt-8 md:mt-12 justify-center">
+            <div className=" flex items-center justify-center relative w-full sm:w-[280px] md:w-[320px] lg:w-[360px] xl:w-[400px] h-[100px] md:h-[140px] lg:h-[160px]  border border-skyBlue bg-white/30 px-4 py-3 md:px-6 md:py-4 lg:px-8 lg:py-5">
+              <div className="relative w-full h-full">
+                <Image
+                  src={incubatedData[0].image}
+                  alt={incubatedData[0].alt}
+                  fill
+                  quality={100}
+                  className="object-contain"
+                />
               </div>
-              <div className="flex items-center justify-center relative w-full h-[80px] md:h-[120px] lg:h-[130px] xl:h-[140px] xlg:h-[150px] 2xl:h-[168px] border border-skyBlue bg-white/30 px-3 py-2 md:px-4 md:py-3 lg:px-6 lg:py-4">
+              <div className="relative w-full h-full">
+                <Image
+                  src={incubatedData[1].image}
+                  alt={incubatedData[1].alt}
+                  fill
+                  quality={100}
+                  className="object-contain"
+                />
+              </div>
+              <h4 className="absolute -bottom-9 left-1/2 -translate-x-1/2 text-lg text-darkGray">
+                IIT Indore
+              </h4>
+            </div>
+            <div className="flex items-center justify-center relative w-full sm:w-[280px] md:w-[320px] lg:w-[360px] xl:w-[400px] h-[100px] md:h-[140px] lg:h-[160px]  border border-skyBlue bg-white/30 px-4 py-3 md:px-6 md:py-4 lg:px-8 lg:py-5">
+              <div className="relative w-full h-full">
+                <Image
+                  src={incubatedData[2].image}
+                  alt={incubatedData[2].alt}
+                  fill
+                  quality={100}
+                  className="object-contain"
+                />
+              </div>
+              <div className="relative w-full h-full">
+                <Image
+                  src={incubatedData[3].image}
+                  alt={incubatedData[3].alt}
+                  fill
+                  quality={100}
+                  className="object-contain"
+                />
+              </div>
+              <h4 className="absolute -bottom-9 left-1/2 -translate-x-1/2 text-lg text-darkGray">
+                IIM Udaipur
+              </h4>
+            </div>
+
+            {/* {incubatedData.map((institute, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center relative w-full sm:w-[280px] md:w-[320px] lg:w-[360px] xl:w-[400px] h-[100px] md:h-[140px] lg:h-[160px] xl:h-[180px] border border-skyBlue bg-white/30 px-4 py-3 md:px-6 md:py-4 lg:px-8 lg:py-5"
+              >
+                <div className="relative w-full h-full">
+                  <Image
+                    src={institute.image}
+                    alt={institute.alt}
+                    fill
+                    quality={100}
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+            ))} */}
+          </div>
+        </div>
+
+        {/* Partners Section */}
+        <div className="pt-4 md:pt-8">
+          <AnimateText finalColor="#2a2b7d" intialColor="#9E9FBF">
+            <h2 className="custom-text-48 font-medium text-blue text-center">
+              Our Esteemed Partners
+            </h2>
+          </AnimateText>
+          <div className="flex flex-wrap gap-6 md:gap-8 2xl:gap-10 mx-auto w-full max-w-4xl px-4 mt-8 md:mt-12 justify-center">
+            {partnerData.map((partner, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center relative w-full sm:w-[280px] md:w-[320px] lg:w-[360px] xl:w-[400px] h-[100px] md:h-[140px] lg:h-[160px]  border border-skyBlue bg-white/30 px-4 py-3 md:px-6 md:py-4 lg:px-8 lg:py-5"
+              >
                 <div className="relative w-full h-full">
                   <Image
                     src={partner.image}
@@ -67,8 +136,8 @@ export default function Partners() {
                   />
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
